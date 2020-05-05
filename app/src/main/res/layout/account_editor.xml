@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.textfield.TextInputLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context="com.ray.android.passwordsecurekiwi.EditorActivity"
+    >
+
+    <!-- Layout for the editor -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/RelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Label -->
+        <TextView
+            android:id="@+id/label_overview"
+            style="@style/LabelStyle"
+            android:layout_marginStart="@dimen/base_dim"
+            android:text="@string/label_overview"
+            app:layout_constraintBottom_toBottomOf="@+id/asterisk_account_type"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/asterisk_account_type"
+            app:layout_constraintVertical_bias="0.0"
+            android:layout_marginLeft="@dimen/base_dim" />
+
+        <!-- Asterisk for Title -->
+        <TextView
+            android:id="@+id/asterisk_account_type"
+            style="@style/AsteriskStyle"
+            android:layout_marginBottom="@dimen/half_dim"
+            android:layout_marginStart="@dimen/base_dim"
+            app:layout_constraintBottom_toBottomOf="@+id/account_type"
+            app:layout_constraintStart_toEndOf="@+id/barrier"
+            app:layout_constraintTop_toTopOf="@+id/account_type"
+            app:layout_constraintVertical_bias="1.0"
+            android:layout_marginLeft="@dimen/base_dim" />
+
+        <!-- Title field -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/account_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/base_dim"
+            android:layout_marginStart="@dimen/half_dim"
+            android:layout_marginTop="@dimen/base_dim"
+            android:minHeight="56dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/asterisk_account_type"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginRight="@dimen/base_dim"
+            android:layout_marginLeft="@dimen/half_dim">
+
+            <EditText
+                android:id="@+id/editTextAccountType"
+                style="@style/EditorFieldStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:hint="@string/hint_account_title"
+                android:inputType="textCapSentences"
+                android:lines="6"
+                android:minHeight="@dimen/widest_dim"
+                android:minLines="1"
+                android:nextFocusDown="@id/editUserName"
+                android:paddingBottom="@dimen/half_dim"
+                android:paddingTop="@dimen/half_dim"
+                android:textSize="@dimen/text_size_m" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <!-- Asterisk -->
+        <TextView
+            android:id="@+id/asterisk_user_namee"
+            style="@style/AsteriskStyle"
+            android:layout_marginStart="@dimen/base_dim"
+            app:layout_constraintBottom_toBottomOf="@+id/user_namee"
+            app:layout_constraintStart_toEndOf="@+id/barrier"
+            app:layout_constraintTop_toTopOf="@+id/user_namee"
+            app:layout_constraintVertical_bias="1.0"
+            android:layout_marginLeft="@dimen/base_dim" />
+
+        <!-- Author field -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/user_namee"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="@dimen/base_dim"
+            android:layout_marginStart="@dimen/half_dim"
+            android:layout_marginTop="@dimen/quarter_dim"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/asterisk_user_namee"
+            app:layout_constraintTop_toBottomOf="@+id/account_type"
+            android:layout_marginLeft="@dimen/half_dim"
+            android:layout_marginRight="@dimen/base_dim">
+
+            <EditText
+                android:id="@+id/editUserName"
+                style="@style/EditorFieldStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:hint="@string/hint_account_user_name"
+                android:inputType="text"
+                android:paddingTop="@dimen/half_dim"
+                android:singleLine="true"
+                android:textSize="@dimen/text_size_m" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <!-- This is the fake one. User Name added after the fact and needs to be included
+         into the SQL Database, making types similar as above two -->
+
+
+        <!-- Asterisk -->
+        <TextView
+            android:id="@+id/asterisk_password"
+            style="@style/AsteriskStyle"
+            android:layout_marginStart="@dimen/base_dim"
+            app:layout_constraintBottom_toBottomOf="@+id/password"
+            app:layout_constraintStart_toEndOf="@+id/barrier"
+            app:layout_constraintTop_toTopOf="@+id/password"
+            app:layout_constraintVertical_bias="1.0"
+            android:layout_marginLeft="@dimen/base_dim" />
+
+        <!-- Password field -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="@dimen/base_dim"
+            android:layout_marginStart="@dimen/half_dim"
+            android:layout_marginTop="@dimen/quarter_dim"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/asterisk_user_namee"
+            app:layout_constraintTop_toBottomOf="@+id/user_namee"
+            android:layout_marginLeft="@dimen/half_dim"
+            android:layout_marginRight="@dimen/base_dim">
+
+            <EditText
+                android:id="@+id/editTextPassword"
+                style="@style/EditorFieldStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:hint="@string/hint_account_password"
+                android:inputType="text"
+                android:paddingTop="@dimen/half_dim"
+                android:singleLine="true"
+                android:textSize="@dimen/text_size_m" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Notes field -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/account_notes"
+            android:layout_width="0dp"
+            android:layout_height="275dp"
+            android:layout_marginEnd="@dimen/base_dim"
+            android:layout_marginTop="@dimen/quarter_dim"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/password"
+            app:layout_constraintTop_toBottomOf="@+id/password"
+            android:layout_marginLeft="@dimen/half_dim"
+            android:layout_marginRight="@dimen/base_dim" >
+
+            <EditText
+                android:id="@+id/editTextAccountNotes"
+                style="@style/EditorFieldStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="top"
+                android:hint="@string/hint_account_notes"
+                android:inputType="textMultiLine|textCapSentences"
+                android:paddingTop="@dimen/half_dim"
+                android:singleLine="false"
+                android:textSize="@dimen/text_size_m"
+                android:maxLength="1000"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+
+        <!-- Asterisk -->
+        <TextView
+            style="@style/AsteriskStyle"
+            android:layout_marginStart="@dimen/base_dim"
+            app:layout_constraintBottom_toBottomOf="@+id/instruction_required_field"
+            app:layout_constraintEnd_toStartOf="@+id/instruction_required_field"
+            app:layout_constraintTop_toTopOf="@+id/instruction_required_field"
+            android:layout_marginLeft="@dimen/base_dim" />
+
+        <!-- Required Fields Instructions -->
+        <TextView
+            android:id="@+id/instruction_required_field"
+            style="@style/AsteriskDescStyle"
+            android:layout_marginBottom="@dimen/base_dim"
+            android:layout_marginEnd="@dimen/base_dim"
+            android:layout_marginTop="@dimen/half_dim"
+            android:text="@string/instruction_required_field"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/account_notes"
+
+            android:textColor="@android:color/black"
+            android:layout_marginRight="@dimen/base_dim" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="right"
+            app:constraint_referenced_ids="label_overview"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.textfield.TextInputLayout>

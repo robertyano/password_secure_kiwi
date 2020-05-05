@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="GoogleAppIndexingWarning"
+    package="com.ray.android.passwordsecurekiwi">
+
+    <application
+        android:name="com.ray.android.passwordsecurekiwi.AccountApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Base.Theme.TransparentAppBar">
+
+        <activity android:name="com.ray.android.passwordsecurekiwi.AccountActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+
+        <activity android:name="com.ray.android.passwordsecurekiwi.SignupActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+
+
+        </activity>
+
+        <activity android:name="com.ray.android.passwordsecurekiwi.LoginActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+
+        <activity android:name="com.ray.android.passwordsecurekiwi.EditorActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:parentActivityName="com.ray.android.passwordsecurekiwi.AccountActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActionBarTheme">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ray.android.passwordsecurekiwi.AccountActivity" />
+        </activity>
+
+        <activity
+            android:name="com.ray.android.passwordsecurekiwi.DetailActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:parentActivityName="com.ray.android.passwordsecurekiwi.AccountActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/DetailTheme">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ray.android.passwordsecurekiwi.AccountActivity" />
+        </activity>
+
+        <activity
+            android:name="com.ray.android.passwordsecurekiwi.PreferencesActivity"
+            android:label="@string/preferences_title"
+            android:screenOrientation="portrait"
+            android:theme="@style/SettingsFragmentTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ray.android.passwordsecurekiwi.AccountActivity" />
+        </activity>
+
+
+
+        <provider
+            android:name="com.ray.android.passwordsecurekiwi.data.ContentProvider"
+            android:authorities="com.ray.android.passwordsecurekiwi"
+            android:exported="false" />
+
+    </application>
+
+</manifest>

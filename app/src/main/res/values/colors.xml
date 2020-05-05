@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2016 The Android Open Source Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Darker variant for the status bar and contextual app bars -->
+    <color name="colorPrimaryDark">#4b2a9b</color>
+
+    <!-- The app branding color for the app bar -->
+    <color name="colorPrimary">#673ab7</color>
+
+    <!-- The app secondary color for preferences screen -->
+    <color name="colorSecondary">#9b69eb</color>
+
+    <!-- Accent color for UI controls like checkboxes and text fields -->
+    <color name="colorAccent">#ff4081</color>
+
+    <!-- App Title color -->
+
+    <!-- Background color -->
+    <color name="offWhiteColor">#edf1f4</color>
+
+    <!-- Text color dark -->
+    <color name="darkTextColor">#666666</color>
+
+    <!-- Text color dark -->
+    <color name="mediumTextColor">#999999</color>
+
+    <!-- Text color light -->
+    <color name="lightTextColor">#CCCCCC</color>
+
+    <!-- FAB button color -->
+    <color name="colorFabButton">#FF4081</color>
+
+    <!-- Navigation Bar translucent color -->
+
+    <!-- Semi transparent colours -->
+    <color name="semiTransparentBlack">#40000000</color>
+
+</resources>

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/offWhiteColor"
+    tools:context="com.ray.android.passwordsecurekiwi.DetailActivity">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:fitsSystemWindows="true"
+        >
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_height="@dimen/detail_backdrop_height"
+            android:layout_width="match_parent"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            >
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:fitsSystemWindows="true"
+                app:contentScrim="?attr/colorPrimary"
+                app:expandedTitleMarginEnd="64dp"
+                app:expandedTitleMarginStart="@dimen/widest_dim"
+                app:collapsedTitleTextAppearance="@style/CollapsedAppBar"
+                app:expandedTitleTextAppearance="@style/ExpandedAppBar"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/newzealand3"
+                    android:contentDescription="@null"
+                    app:layout_collapseMode="parallax"
+                    />
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="start|bottom"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    app:layout_collapseMode="parallax"
+                    >
+                    
+                    <TextView
+                        android:id="@+id/textViewTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/base_dim"
+                        android:layout_marginEnd="@dimen/base_dim"
+                        android:ellipsize="end"
+                        android:gravity="bottom|start"
+                        android:lines="3"
+                        android:maxLines="3"
+                        android:text="Facebook"
+                        android:textAppearance="?android:textAppearanceLarge"
+                        />
+
+
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                    />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <androidx.cardview.widget.CardView
+                    android:layout_height="130dp"
+                    android:layout_width="match_parent"
+                    android:layout_marginEnd="@dimen/base_dim"
+                    android:layout_marginStart="@dimen/base_dim"
+                    android:layout_marginTop="@dimen/wider_dim"
+                    app:cardBackgroundColor="@android:color/white"
+                    >
+
+                    <!-- Layout for the Views -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <!-- Label -->
+                        <TextView
+                            android:id="@+id/label_account"
+                            style="@style/LabelStyle"
+                            android:layout_width="110dp"
+                            android:layout_marginStart="@dimen/base_dim"
+                            android:layout_marginTop="@dimen/base_dim"
+                            android:text="Account"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:layout_marginLeft="@dimen/base_dim"
+                            />
+
+                        <TextView
+                            android:id="@+id/label_details"
+                            style="@style/LabelStyle"
+                            android:layout_width="110dp"
+                            android:layout_marginStart="@dimen/base_dim"
+                            android:layout_marginTop="@dimen/wider_dim"
+                            android:text="Details"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/label_account"
+                            android:layout_marginLeft="@dimen/base_dim"
+                            />
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:layout_marginLeft="127dp"
+                            android:layout_marginStart="127dp"
+                            android:layout_marginRight="@dimen/base_dim"
+                            android:layout_marginEnd="@dimen/base_dim">
+
+                        <!-- Account Details Info -->
+                           <!-- <TextView
+                                android:id="@+id/textViewAccountType"
+                                style="@style/RegularText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/base_dim"
+                                android:singleLine="false"
+                                android:text="Bank of America"
+                                android:textSize="@dimen/text_size_m"
+                                android:maxLines="2"
+                                />-->
+
+                            <TextView
+                                android:id="@+id/textViewUserName"
+                                style="@style/RegularText"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:singleLine="false"
+                                android:maxLines="2"
+                                android:text="Super long acccount to make the text go over to the second line "
+                                android:textSize="@dimen/text_size_m"
+                                android:layout_marginTop="@dimen/base_dim"
+                                 />
+
+                            <TextView
+                                android:id="@+id/textViewPassword"
+                                style="@style/RegularText"
+                                app:layout_constraintTop_toTopOf="@+id/textViewUserName"
+                                app:layout_constraintStart_toStartOf="parent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:singleLine="false"
+                                android:maxLines="2"
+                                android:text="babycoastla25"
+                                android:textSize="@dimen/text_size_m"
+                                android:layout_marginTop="@dimen/wider_dim"
+                                 />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Account Notes Card View -->
+                <androidx.cardview.widget.CardView
+                    android:layout_height="200dp"
+                    android:layout_width="match_parent"
+                    android:layout_marginEnd="@dimen/base_dim"
+                    android:layout_marginStart="@dimen/base_dim"
+                    android:layout_marginTop="@dimen/double_dim"
+                    app:cardBackgroundColor="@android:color/white"
+                    >
+
+                    <!-- Layout for the Account Notes -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <!-- Label -->
+                        <TextView
+                            android:id="@+id/label_notes"
+                            style="@style/LabelStyle"
+                            android:layout_width="110dp"
+                            android:layout_marginStart="@dimen/base_dim"
+                            android:layout_marginTop="@dimen/base_dim"
+                            android:text="Notes"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:layout_marginLeft="@dimen/base_dim"
+                            />
+
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:layout_marginLeft="127dp"
+                            android:layout_marginStart="127dp"
+                            android:layout_marginRight="@dimen/base_dim"
+                            android:layout_marginEnd="@dimen/base_dim">
+
+                            <androidx.core.widget.NestedScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                android:scrollbars="vertical"
+                                android:fillViewport="true"
+                                 >
+
+                                <TextView
+                                    android:id="@+id/textViewAccountNotes"
+                                    style="@style/RegularText"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:singleLine="false"
+                                    android:text="When you go to this website make sure to turn off cookies and not allow the computer to save your password. Thisi is very important!! "
+                                    android:textSize="@dimen/text_size_m"
+                                    android:layout_marginTop="@dimen/base_dim"
+                                    android:layout_weight="1.0"
+                                    />
+
+                            </androidx.core.widget.NestedScrollView>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</RelativeLayout>

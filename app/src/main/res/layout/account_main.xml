@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.ray.android.passwordsecurekiwi.AccountActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/RelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.ray.android.passwordsecurekiwi.AccountActivity" >
+
+        <ImageView
+            android:id="@+id/book_bg"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"
+            android:cropToPadding="false"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="w,1:2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/newzealand3"
+            />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@id/book_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ripple"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+        <LinearLayout
+            android:id="@+id/orderby_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_below="@id/toolbar"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:id="@+id/orderby_toolbar_results"
+                android:layout_marginBottom="@dimen/half_dim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginEnd="@dimen/base_dim"
+                android:layout_marginLeft="@dimen/base_dim"
+                android:layout_marginTop="@dimen/half_dim"
+                android:background="@drawable/rounded_toolbar_bg"
+                android:paddingBottom="@dimen/half_dim"
+                android:paddingEnd="@dimen/base_dim"
+                android:paddingStart="@dimen/base_dim"
+                android:paddingTop="@dimen/half_dim"
+                android:text="@string/order_by_toolbar_results_found"
+                android:textColor="@android:color/white"
+                android:layout_marginRight="@dimen/base_dim"
+                />
+
+            <TextView
+                android:id="@+id/orderby_toolbar_ordering"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginBottom="@dimen/half_dim"
+                android:layout_marginEnd="@dimen/base_dim"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="@dimen/half_dim"
+                android:background="@drawable/rounded_toolbar_bg"
+                android:paddingBottom="@dimen/half_dim"
+                android:paddingEnd="@dimen/base_dim"
+                android:paddingStart="@dimen/base_dim"
+                android:paddingTop="@dimen/half_dim"
+                android:drawablePadding="@dimen/half_dim"
+                android:text="@string/order_by_toolbar_title"
+                android:drawableEnd="@drawable/ic_descending"
+                android:onClick="onClick"
+                android:textColor="@android:color/white"
+                android:layout_marginRight="@dimen/base_dim"
+                android:layout_marginLeft="0dp"
+                android:drawableRight="@drawable/ic_descending"
+                />
+
+        </LinearLayout>
+
+        <!-- Empty view for the list -->
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:clipToPadding="false"
+            android:paddingTop="80dp"
+            android:paddingBottom="@dimen/half_dim"
+            android:listSelector="@android:color/transparent"
+            android:layout_below="@id/orderby_toolbar"
+            tools:listitem="@layout/list_item"
+            />
+
+    <!-- FAB button to add a account -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/double_dim"
+        android:src="@drawable/ic_action_add"
+        app:backgroundTint="@color/colorFabButton"
+        app:borderWidth="0dp"
+        />
+
+</RelativeLayout>
+

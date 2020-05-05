@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2016 The Android Open Source Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme -->
+    <style name="Theme.TransparentAppBar" parent="Base.Theme.TransparentAppBar">
+        <item name="android:windowDrawsSystemBarBackgrounds" tools:targetApi="lollipop">true</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@android:color/transparent</item>
+    </style>
+
+    <!-- Main Activity theme -->
+    <style name="Base.Theme.TransparentAppBar" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/offWhiteColor</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/quicksand</item>
+        <!-- fontFamily: target android sdk versions < 26 and > 14 if theme other than AppCompat -->
+        <item name="fontFamily">@font/quicksand</item>
+        <item name="cardViewStyle">@style/CardView.Light</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+
+        <item name="android:actionOverflowButtonStyle">@style/ActionButtonOverflow</item>
+        <!-- Support library compatibility -->
+        <item name="actionOverflowButtonStyle">@style/ActionButtonOverflow</item>
+    </style>
+
+    <!-- Theme of the editor and any activity requiring an action bar -->
+    <style name="ActionBarTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowBackground">@color/offWhiteColor</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/quicksand_medium</item>
+        <!-- fontFamily: target android sdk versions < 26 and > 14 if theme other than AppCompat -->
+        <item name="fontFamily">@font/quicksand_medium</item>
+        <item name="cardViewStyle">@style/CardView.Light</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+
+
+    <!-- Theme of the details screen -->
+    <style name="DetailTheme" parent="Theme.TransparentAppBar">
+        <item name="android:windowBackground">@color/offWhiteColor</item>
+        <item name="buttonStyle">@style/DefaultFontButtonStyle</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/quicksand_medium</item>
+        <!-- fontFamily: target android sdk versions < 26 and > 14 if theme other than AppCompat -->
+        <item name="fontFamily">@font/quicksand_medium</item>
+        <item name="cardViewStyle">@style/CardView.Light</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+
+        <item name="android:actionOverflowButtonStyle">@style/ActionButtonOverflow</item>
+        <!-- Support library compatibility -->
+        <item name="actionOverflowButtonStyle">@style/ActionButtonOverflow</item>
+
+        <!-- Dialog Styles -->
+        <item name="android:dialogTheme">@style/Theme.AppCompat.Light.Dialog.Alert</item>
+        <item name="android:alertDialogTheme">@style/Theme.AppCompat.Light.Dialog.Alert</item>
+    </style>
+
+    <!-- Collapsed CollapsingToolbarLayout Title -->
+    <style name="CollapsedAppBar" parent="Theme.TransparentAppBar">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <!-- Expanded CollapsingToolbarLayout Title -->
+    <style name="ExpandedAppBar" parent="Theme.TransparentAppBar">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <!-- Custom Toolbar ActionButtonOverflow Color -->
+    <style name="ActionButtonOverflow" parent="@style/Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:tint">@android:color/white</item>
+    </style>
+
+    <!-- Overflow Preferences menu -->
+    <!--<style name="MenuOverflow" parent="@style/Widget.AppCompat.PopupMenu.Overflow">-->
+    <!--<item name="android:colorBackground">@color/offWhiteColor</item>-->
+    <!--<item name="android:textColor">@android:color/black</item>-->
+    <!--</style>-->
+
+    <!-- Style for a Label in the editor -->
+    <style name="LabelStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+    </style>
+
+    <!-- Style for an EditText field in the editor -->
+    <style name="EditorFieldStyle">
+        <item name="android:layout_height">@dimen/widest_dim</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textAppearance">?android:textAppearance</item>
+        <item name="android:textColor">@color/darkTextColor</item>
+        <item name="android:paddingStart" tools:targetApi="jelly_bean_mr1">@dimen/half_dim</item>
+        <item name="android:paddingEnd" tools:targetApi="jelly_bean_mr1">@dimen/half_dim</item>
+        <item name="android:paddingTop">@dimen/quarter_dim</item>
+        <item name="android:paddingBottom">@dimen/quarter_dim</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/edittext_bg</item>
+    </style>
+
+    <!-- Style for required field asterisk -->
+    <style name="AsteriskStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textAppearance">?android:textAppearanceLarge</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:text">@string/required_field_asterisk</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <!-- Style for required field asterisk -->
+    <style name="AsteriskDescStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <!-- Style for regular text -->
+    <style name="RegularText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textAppearance">?android:textAppearance</item>
+        <item name="android:textColor">@color/mediumTextColor</item>
+    </style>
+
+
+    <!-- Settings Preferences Text Style -->
+    <style name="SettingsFragmentTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+        <item name="android:windowBackground">@color/colorSecondary</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/text_size_m</item>
+        <item name="fontFamily">@font/quicksand_medium</item>
+        <!-- Dialog Styles -->
+        <item name="android:dialogTheme">@style/DialogStyle</item>
+        <item name="android:alertDialogTheme">@style/DialogStyle</item>
+    </style>
+    <!-- Settings Dialog Styles -->
+    <style name="DialogStyle" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:textColorPrimary">@color/colorPrimary</item>
+        <item name="android:textColorSecondary">@color/colorPrimary</item>
+        <item name="android:background">@color/colorSecondary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/text_size_m</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/quicksand_medium</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+    </style>
+
+    <!-- List Item Button Style -->
+    <style name="EditButtonStyle">
+
+        <item name="android:focusable">false</item>
+        <item name="android:focusableInTouchMode">false</item>
+    </style>
+
+    <!-- Default Font Text Style -->
+
+    <!-- Default Font Button Style -->
+    <style name="DefaultFontButtonStyle" parent="android:Widget.Holo.Button">
+        <item name="android:textAppearance">?android:button</item>
+    </style>
+
+</resources>
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Options menu for the MainInventory -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.ray.android.passwordsecurekiwi.AccountActivity"
+    >
+
+    <item
+        android:id="@+id/action_add"
+        android:title="@string/action_add"
+        android:icon="@drawable/ic_action_add"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_delete_all_entries"
+        android:title="@string/action_delete_all_entries"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_update_pin_code"
+        android:title="@string/update_pin_code"
+        app:showAsAction="never" />
+
+
+
+
+</menu>
