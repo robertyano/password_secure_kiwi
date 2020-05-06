@@ -9,6 +9,7 @@ import android.content.CursorLoader;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.Loader;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -86,9 +87,14 @@ public class AccountActivity extends AppCompatActivity implements LoaderManager.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mDbHelper = new AccountDbHelper(this);    // ADDED FOR TESTS
-
-
         setContentView(R.layout.account_main);
+
+        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        boolean firstStart = prefs.getBoolean("firstStart", true);
+
+        if (firstStart) {
+            showStartDialog();
+        }
 
 
 
@@ -195,6 +201,24 @@ public class AccountActivity extends AppCompatActivity implements LoaderManager.
                 }
             }
         });
+    }
+
+    private void showStartDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.first_open_message_header)
+                .setMessage(R.string.first_open_message)
+                .setPositiveButton("Got it!", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+
+                        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = prefs.edit();
+                        editor.putBoolean("firstStart", false);
+                        editor.apply();
+                    }
+                })
+                .create().show();
     }
 
 
