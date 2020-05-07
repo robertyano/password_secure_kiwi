@@ -44,7 +44,11 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                login();
+                String password = _passwordText.getText().toString();
+                if (password.length() > 0) {
+                    login();
+                }
+
             }
         });
 
@@ -109,6 +113,7 @@ public class LoginActivity extends AppCompatActivity {
         String password = _passwordText.getText().toString();
         if (password.length() != 4) {
             Toast.makeText(getBaseContext(), "Must be 4 digit code", Toast.LENGTH_LONG).show();
+
         } else {
             Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
         }
@@ -122,7 +127,7 @@ public class LoginActivity extends AppCompatActivity {
 
         String password = _passwordText.getText().toString();
 
-        if (password.length() != 4) {
+        if (password.length() != 4 || password.length() == 0) {
             _passwordText.setError("Must be 4 digit code");
             valid = false;
         } else {

@@ -5,7 +5,7 @@
 
     <!-- Catalog Activity "Ordered by" Toolbar area populated by stored preferences -->
     <string name="order_by_toolbar_title">ordered</string>
-    <string name="order_by_toolbar_results_found">results found</string>
+    <string name="order_by_toolbar_results_found">Results Found</string>
 
     <!-- Title for the activity to add a new book [CHAR LIMIT=20] -->
     <string name="editor_activity_title_add_account">Add a Account</string>
@@ -13,9 +13,7 @@
 
     <!-- Text Labels for fields in the editor [CHAR LIMIT=30] -->
     <string name="label_overview">Overview</string>
-    <string name="label_account_details">Account Details</string>
-    <string name="label_in_stock">In Stock</string>
-    <string name="label_price">Retail Price</string>
+
 
     <!-- Text hints and units for fields in the editor [CHAR LIMIT=30] -->
     <string name="hint_account_title">Account Type</string>
@@ -45,6 +43,13 @@
 
     <!-- Instructions for the user -->
     <string name="instruction_required_field">Indicates required fields.</string>
+    <string name="login_bttn">LOGIN</string>
+    <string name="pin_code">Pass Code</string>
+    <string name="create_pin">Create Pin Code</string>
+    <string name="digit_pin_4">4 Digit Pin Code</string>
+    <string name="digit_pin_4_confirmation">4 Digit Pin Code Confirmation</string>
+    <string name="sign_up_info">This pin code will be used to access your account details. Please
+        make sure that you remember this code.</string>
 
     <!-- Confirmation dialog labels and messages -->
     <string name="delete_dialog_msg">Delete this account?</string>
@@ -57,7 +62,7 @@
     <string name="discard">Discard</string>
     <string name="keep_editing">Keep Editing</string>
     <string name="first_open_message_header">Thank you for choosing Password Secure Kiwi!</string>
-    <string name="first_open_message">\nThis application prioritizes your privacy and does not store your data anywhere besides physically
+    <string name="first_open_message" translatable="false">\nThis application prioritizes your privacy and does not store your data anywhere besides physically
         on your device. For full transparency, source code for Password Secure Kiwi can be found
         here.\n\nPlease support independent developers by recommending Password Secure Kiwi to your family and friends!</string>
 
@@ -68,66 +73,37 @@
 
     <!-- Labels for overflow menu options [CHAR LIMIT=20] -->
     <string name="action_add">Add a Account</string>
-    <string name="action_insert_dummy_data">Insert Dummy Data</string>
     <string name="action_delete_all_entries">Delete All Accounts</string>
     <string name="update_pin_code">Update Pin Code</string>
-    <string name="action_preferences">Preferences</string>
 
-    <!-- Text for the empty view, which that prompts the user to add a book [CHAR LIMIT=50] -->
-    <string name="empty_view_title_text">It\'s a bit lonely here&#8230;</string>
-    <string name="empty_view_subtitle_text">Get started by adding an account login.</string>
-
-    <!-- Image descriptions for accessibility -->
-    <string name="empty_shelf_image_desc">Empty book shelf</string>
 
     <!-- Asterisk that indicates a required field -->
     <string name="required_field_asterisk" translatable="false">*</string>
 
-    <!-- Temporary view contents -->
-    <string name="currency_dollar" translatable="false">$</string>
 
     <!-- PREFERENCES STRINGS -->
     <!-- Activity Title -->
-    <string name="preferences_title">Preferences</string>
-    <!--Preference categories-->
-    <string name="general_category">General</string>
+    <string name="preferences_title" translatable="false">Preferences</string>
+
 
     <!-- Order preference-->
-    <string name="pref_order_by_title">Order By</string>
     <string name="pref_order_by_key" translatable="false">order_by</string>
-    <string name="pref_order_by_default">@string/pref_order_by_account_value</string>
+    <string name="pref_order_by_default" translatable="false">@string/pref_order_by_account_value</string>
     <string name="pref_order_by_account_label">Account</string>
     <string name="pref_order_by_title_label">Title</string>
-    <string name="pref_order_by_stockcount_label">Stock Count</string>
-    <string name="pref_order_by_price_label">Price</string>
+
     <string name="pref_order_by_user_name" translatable="false">user_name</string>
     <string name="pref_order_by_account_value" translatable="false">account_title</string>
-    <string name="pref_order_by_stockcount_value" translatable="false">quantity</string>
-    <string name="pref_order_by_price_value" translatable="false">price</string>
 
-    <string name="pref_order_by_direction_title">@null</string>
+
+    <string name="pref_order_by_direction_title" translatable="false">@null</string>
     <string name="pref_order_by_direction_key" translatable="false">order_by_direction</string>
-    <string name="pref_order_by_direction_default">@string/pref_order_by_direction_asc_value</string>
-    <string name="pref_order_by_direction_asc_label">Ascending Order</string>
-    <string name="pref_order_by_direction_desc_label">Descending Order</string>
+    <string name="pref_order_by_direction_default" translatable="false">@string/pref_order_by_direction_asc_value</string>
+    <string name="pref_order_by_direction_asc_label" translatable="false">Ascending Order</string>
+    <string name="pref_order_by_direction_desc_label" translatable="false">Descending Order</string>
     <string name="pref_order_by_direction_asc_value" translatable="false">ASC</string>
     <string name="pref_order_by_direction_desc_value" translatable="false">DESC</string>
 
-    <!-- Topic preference-->
-    <string name="pref_currency_title">Currency</string>
-    <string name="pref_currency_key" translatable="false">currency</string>
-    <!--<string name="pref_currency_default">@string/pref_currency_0_label_value</string>-->
-    <string name="pref_currency_0_label">US Dollar</string>
-    <string name="pref_currency_1_label">Euro</string>
-    <string name="pref_currency_2_label">Pound Sterling</string>
-    <string name="pref_currency_3_label">Canadian Dollar</string>
-    <string name="pref_currency_4_label">Japanese Yen</string>
-    <string name="pref_currency_5_label">Chinese Yuan</string>
-    <string name="pref_currency_0_label_value" translatable="false">Locale.US</string>
-    <string name="pref_currency_1_label_value" translatable="false">Locale.ITALY</string>
-    <string name="pref_currency_2_label_value" translatable="false">Locale.UK</string>
-    <string name="pref_currency_3_label_value" translatable="false">Locale.CANADA</string>
-    <string name="pref_currency_4_label_value" translatable="false">Locale.JAPAN</string>
-    <string name="pref_currency_5_label_value" translatable="false">Locale.CHINA</string>
+
 
 </resources>

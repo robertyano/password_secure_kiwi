@@ -3,14 +3,11 @@
     <string-array name="pref_order_by_column_labels">
         <item>@string/pref_order_by_account_label</item>
         <item>@string/pref_order_by_title_label</item>
-        <item>@string/pref_order_by_stockcount_label</item>
-        <item>@string/pref_order_by_price_label</item>
+
     </string-array>
     <string-array name="pref_order_by_column_values">
         <item>@string/pref_order_by_user_name</item>
         <item>@string/pref_order_by_account_value</item>
-        <item>@string/pref_order_by_stockcount_value</item>
-        <item>@string/pref_order_by_price_value</item>
     </string-array>
     <string-array name="pref_order_by_direction_labels">
         <item>@string/pref_order_by_direction_asc_label</item>
@@ -20,20 +17,5 @@
         <item>@string/pref_order_by_direction_asc_value</item>
         <item>@string/pref_order_by_direction_desc_value</item>
     </string-array>
-    <string-array name="pref_currency_labels">
-        <item>@string/pref_currency_0_label</item>
-        <item>@string/pref_currency_1_label</item>
-        <item>@string/pref_currency_2_label</item>
-        <item>@string/pref_currency_3_label</item>
-        <item>@string/pref_currency_4_label</item>
-        <item>@string/pref_currency_5_label</item>
-    </string-array>
-    <string-array name="pref_currency_locales">
-        <!--<item>@string/pref_currency_0_label_value</item>-->
-        <item>@string/pref_currency_1_label_value</item>
-        <item>@string/pref_currency_2_label_value</item>
-        <item>@string/pref_currency_3_label_value</item>
-        <item>@string/pref_currency_4_label_value</item>
-        <item>@string/pref_currency_5_label_value</item>
-    </string-array>
+
 </resources>
