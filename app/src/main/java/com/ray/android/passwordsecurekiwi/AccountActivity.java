@@ -15,6 +15,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -93,7 +94,27 @@ public class AccountActivity extends AppCompatActivity implements LoaderManager.
         boolean firstStart = prefs.getBoolean("firstStart", true);
 
         if (firstStart) {
-            showStartDialog();
+            // showStartDialog();
+            final AlertDialog d = new AlertDialog.Builder(this)
+                    .setTitle(R.string.first_open_message_header)
+                    .setMessage(R.string.first_open_message)
+                    .setPositiveButton(R.string.first_message_confirmation, new DialogInterface.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.dismiss();
+
+                            SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = prefs.edit();
+                            editor.putBoolean("firstStart", false);
+                            editor.apply();
+                        }
+                    })
+                    .create();
+            d.show();
+
+            // Make the textview clickable. Must be called after show()
+            ((TextView)d.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
         }
 
 
@@ -203,11 +224,12 @@ public class AccountActivity extends AppCompatActivity implements LoaderManager.
         });
     }
 
-    private void showStartDialog() {
-        new AlertDialog.Builder(this)
+  /*  private void showStartDialog() {
+        final AlertDialog d = new AlertDialog.Builder(this)
                 .setTitle(R.string.first_open_message_header)
                 .setMessage(R.string.first_open_message)
-                .setPositiveButton("Got it!", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Got it!", new DialogInterface.OnClickListener()
+                {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dialogInterface.dismiss();
@@ -219,7 +241,7 @@ public class AccountActivity extends AppCompatActivity implements LoaderManager.
                     }
                 })
                 .create().show();
-    }
+    }*/
 
 
     /**
