@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kiwi Secure Passwords</string>
+    <string name="action_add">Agregar una cuenta</string>
+    <string name="action_delete">Borrar</string>
+    <string name="action_delete_all_entries">Eliminar todas las cuentas</string>
+    <string name="action_edit">Editar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="action_save">Guardar</string>
+    <string name="currently_unavailable">Actualmente no disponible</string>
+    <string name="delete">Borrar</string>
+    <string name="delete_all_dialog_msg">¿Está seguro de que desea eliminar todas las cuentas de la base de datos?</string>
+    <string name="delete_dialog_msg">¿Eliminar esta cuenta?</string>
+    <string name="discard">Descarte</string>
+    <string name="editor_activity_title_add_account">Agregar una cuenta</string>
+    <string name="editor_activity_title_edit_account">Editar Cuenta</string>
+    <string name="first_open_message_header">¡Gracias por elegir Password Secure Kiwi!</string>
+    <string name="hint_account_notes">Notas...</string>
+    <string name="hint_account_password">Contraseña</string>
+    <string name="hint_account_title">Tipo de cuenta</string>
+    <string name="hint_account_user_name">Nombre de usuario</string>
+    <string name="instruction_required_field">Indica campos obligatorios.</string>
+    <string name="keep_editing">Sigue Editando</string>
+    <string name="label_overview">Detalles</string>
+    <string name="no_account">¡No se guardaron detalles de la cuenta!</string>
+    <string name="order_by_toolbar_results_found">Resultados</string>
+    <string name="order_by_toolbar_title">ordenado</string>
+    <string name="pref_order_by_account_label">Cuenta</string>
+    <string name="pref_order_by_title_label">Título</string>
+    <string name="toast_delete_account_failed">Error al eliminar cuenta</string>
+    <string name="toast_delete_account_successful">Cuenta borrada</string>
+    <string name="toast_delete_all_accounts_failed">Nada fue eliminado</string>
+    <string name="toast_delete_all_accounts_successful">%1$d cuentas han sido eliminadas</string>
+    <string name="toast_delete_pin_code">El código PIN ha sido eliminado. ¡Por favor cree uno nuevo!</string>
+    <string name="toast_insert_account_failed">Error al agregar cuenta</string>
+    <string name="toast_insert_account_successful">Nuevo cuenta agregada</string>
+    <string name="toast_required_account_name">Tipo de cuenta requerido</string>
+    <string name="toast_required_pass_code">Pin Code requerido</string>
+    <string name="toast_required_user_name">Nombre de usuario requerido</string>
+    <string name="toast_update_account_failed">Error al actualizar cuenta</string>
+    <string name="toast_update_account_successful">Cuenta Actualizada</string>
+    <string name="unsaved_changes_dialog_msg">¿Descartar tus cambios y dejar de editar?</string>
+    <string name="update">Actualizar</string>
+    <string name="update_pin_code">Actualizar código de pin</string>
+    <string name="update_pin_code_msg">¿Seguro que quieres actualizar tu código PIN?</string>
+    <string name="login_bttn">INICIAR SESIÓN</string>
+    <string name="pin_code">Código de Acceso</string>
+    <string name="create_pin">Crear código PIN</string>
+    <string name="digit_pin_4">Código PIN de 4 dígitos</string>
+    <string name="digit_pin_4_confirmation">Confirmación de código PIN de 4 dígitos</string>
+    <string name="sign_up_info">Este código PIN se usará para acceder a los detalles de su cuenta. Asegúrese de recordar este código.</string>
+    <string name="first_open_message" translatable="false">Esta aplicación prioriza su privacidad y no
+        almacena sus datos en ningún lugar además de físicamente en su dispositivo. Para una total
+        transparencia, el código de Password Secure Kiwi se puede encontrar
+        en <a href="https://github.com/robertyano/password_secure_kiwi">GitHub.</a>\n\n¡Por favor apoye
+        a los developers independientes recomendando Password Secure Kiwi a su familia y amigos!</string>
+    <string name="first_message_confirmation">Entendido!</string>
+</resources>
