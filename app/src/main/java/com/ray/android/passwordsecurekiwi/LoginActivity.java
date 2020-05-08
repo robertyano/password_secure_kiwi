@@ -1,5 +1,6 @@
 package com.ray.android.passwordsecurekiwi;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,6 +8,7 @@ import android.util.Log;
 
 import android.content.Intent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -45,6 +47,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String password = _passwordText.getText().toString();
+                hideSoftKeyboard(v);
                 if (password.length() > 0) {
                     login();
                 }
@@ -143,5 +146,11 @@ public class LoginActivity extends AppCompatActivity {
 
 
         return valid;
+    }
+
+    // Hide the software keyboard when necessary
+    public void hideSoftKeyboard(View view) {
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 }
