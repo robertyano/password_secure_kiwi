@@ -418,6 +418,7 @@ public class AccountActivity extends AppCompatActivity implements LoaderManager.
             case R.id.action_update_pin_code:
                 // Pop up confirmation dialog for update
                 updatePinCodeDialog();
+                return true;
 
             // Responds to a click on the "View Source Code" menu option
             case R.id.view_source_code:
@@ -425,6 +426,7 @@ public class AccountActivity extends AppCompatActivity implements LoaderManager.
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW,
                         Uri.parse("https://github.com/robertyano/password_secure_kiwi"));
                 startActivity(browserIntent);
+                return true;
 
         }
         return super.onOptionsItemSelected(item);
