@@ -76,6 +76,7 @@
     <string name="action_add">Add a Account</string>
     <string name="action_delete_all_entries">Delete All Accounts</string>
     <string name="update_pin_code">Update Pin Code</string>
+    <string name="view_source_code">View Source Code</string>
 
 
     <!-- Asterisk that indicates a required field -->
