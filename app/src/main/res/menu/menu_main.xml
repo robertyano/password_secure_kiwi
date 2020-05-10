@@ -23,6 +23,11 @@
         app:showAsAction="never" />
 
     <item
+        android:id="@+id/export_accounts"
+        android:title="@string/export_accounts"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/view_source_code"
         android:title="@string/view_source_code"
         app:showAsAction="never" />

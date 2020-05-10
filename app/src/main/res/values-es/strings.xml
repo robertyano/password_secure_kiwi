@@ -56,4 +56,5 @@
         a los developers independientes recomendando Password Secure Kiwi a su familia y amigos!</string>
     <string name="first_message_confirmation">Entendido!</string>
     <string name="view_source_code">Ver código</string>
+    <string name="export_accounts">Exportar cuentas</string>
 </resources>
