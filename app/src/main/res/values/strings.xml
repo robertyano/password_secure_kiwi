@@ -11,8 +11,9 @@
     <string name="editor_activity_title_add_account">Add a Account</string>
     <string name="editor_activity_title_edit_account">Edit Account</string>
 
-    <!-- Text Labels for fields in the editor [CHAR LIMIT=30] -->
+    <!-- Text Labels for fields in the editor and account exports [CHAR LIMIT=30] -->
     <string name="label_overview">Overview</string>
+    <string name="export_accounts_overview">Export Accounts Overview:</string>
 
 
     <!-- Text hints and units for fields in the editor [CHAR LIMIT=30] -->
@@ -55,6 +56,7 @@
     <string name="delete_dialog_msg">Delete this account?</string>
     <string name="delete_all_dialog_msg">Are you sure you want to delete all accounts in the database?</string>
     <string name="update_pin_code_msg">Are you sure you want to update your pin code?</string>
+
     <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
     <string name="delete">Delete</string>
     <string name="update">Update</string>

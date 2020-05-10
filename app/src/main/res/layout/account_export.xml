@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/AccountExportRelativeLayout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <!-- Label -->
+    <TextView
+        android:id="@+id/export_accounts_overview"
+        style="@style/LabelStyle"
+        android:layout_marginStart="@dimen/base_dim"
+        android:layout_marginTop="@dimen/base_dim"
+        android:text="@string/export_accounts_overview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginLeft="@dimen/base_dim" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

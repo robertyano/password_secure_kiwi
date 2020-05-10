@@ -224,25 +224,6 @@ public class AccountActivity extends AppCompatActivity implements LoaderManager.
         });
     }
 
-  /*  private void showStartDialog() {
-        final AlertDialog d = new AlertDialog.Builder(this)
-                .setTitle(R.string.first_open_message_header)
-                .setMessage(R.string.first_open_message)
-                .setPositiveButton("Got it!", new DialogInterface.OnClickListener()
-                {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
-
-                        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
-                        SharedPreferences.Editor editor = prefs.edit();
-                        editor.putBoolean("firstStart", false);
-                        editor.apply();
-                    }
-                })
-                .create().show();
-    }*/
-
 
     /**
      * Helper that checks and sets the results counter above the ListView
@@ -386,7 +367,6 @@ public class AccountActivity extends AppCompatActivity implements LoaderManager.
         alertDialog.show();
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu options from the res/menu/menu_catalog.xml file.
@@ -418,6 +398,13 @@ public class AccountActivity extends AppCompatActivity implements LoaderManager.
             case R.id.action_update_pin_code:
                 // Pop up confirmation dialog for update
                 updatePinCodeDialog();
+                return true;
+
+            // Responds to a click on the "Export Accounts" menu option
+            case R.id.export_accounts:
+                // Open ExportAccountActivity
+                Intent intentExportAccount = new Intent(AccountActivity.this, ExportAccountActivity.class);
+                startActivity(intentExportAccount);
                 return true;
 
             // Responds to a click on the "View Source Code" menu option

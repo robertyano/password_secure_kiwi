@@ -56,6 +56,23 @@
                 android:value="com.ray.android.passwordsecurekiwi.AccountActivity" />
         </activity>
 
+        <activity android:name="com.ray.android.passwordsecurekiwi.ExportAccountActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:parentActivityName="com.ray.android.passwordsecurekiwi.AccountActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActionBarTheme">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ray.android.passwordsecurekiwi.AccountActivity" />
+        </activity>
+
+
+
+
+
+
         <activity
             android:name="com.ray.android.passwordsecurekiwi.DetailActivity"
             android:configChanges="orientation|keyboardHidden"
