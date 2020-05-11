@@ -14,5 +14,10 @@ public class ExportAccountActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.account_export);
+
+        // Change the app bar to say "Export Accounts OverView"
+        setTitle(getString(R.string.export_accounts_overview));
     }
+
+
 }

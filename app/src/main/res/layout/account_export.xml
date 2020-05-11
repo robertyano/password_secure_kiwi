@@ -1,23 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/AccountExportRelativeLayout"
+    android:layout_margin="@dimen/base_dim"
+    app:cardBackgroundColor="@android:color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     >
 
-    <!-- Label -->
-    <TextView
-        android:id="@+id/export_accounts_overview"
-        style="@style/LabelStyle"
-        android:layout_marginStart="@dimen/base_dim"
-        android:layout_marginTop="@dimen/base_dim"
-        android:text="@string/export_accounts_overview"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        android:layout_marginLeft="@dimen/base_dim" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Top Introduction -->
+        <TextView
+            android:id="@+id/export_accounts_introduction"
+            style="@style/LabelStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/base_dim"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/export_accounts_intro"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:layout_margin="@dimen/base_dim"
+            />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_alignBottom="@+id/export_accounts_introduction"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scrollbars="vertical"
+            android:fillViewport="true"
+            app:layout_constraintStart_toStartOf="@+id/export_accounts_introduction"
+            app:layout_constraintTop_toBottomOf="@+id/export_accounts_introduction"
+            app:layout_constraintEnd_toEndOf="@+id/export_accounts_introduction"
+            app:layout_constraintBottom_toTopOf="@+id/btn_download_csv"
+            android:layout_marginBottom="@dimen/base_dim"
+            >
+
+            <TextView
+                android:id="@+id/export_accounts_steps"
+                style="@style/RegularText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/export_accounts_steps"
+                android:textSize="@dimen/text_size_m"
+                android:layout_marginLeft="@dimen/base_dim"
+                android:layout_marginRight="@dimen/base_dim"
+                android:layout_marginBottom="@dimen/base_dim"
+                />
+
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_download_csv"
+            android:layout_width="@dimen/edit_btn_size_length"
+            android:layout_height="@dimen/edit_btn_size_width"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/base_dim"
+            android:background="@color/colorFabButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+</androidx.cardview.widget.CardView>

@@ -13,7 +13,7 @@
 
     <!-- Text Labels for fields in the editor and account exports [CHAR LIMIT=30] -->
     <string name="label_overview">Overview</string>
-    <string name="export_accounts_overview">Export Accounts Overview:</string>
+    <string name="export_accounts_overview">Export Accounts</string>
 
 
     <!-- Text hints and units for fields in the editor [CHAR LIMIT=30] -->
@@ -56,7 +56,6 @@
     <string name="delete_dialog_msg">Delete this account?</string>
     <string name="delete_all_dialog_msg">Are you sure you want to delete all accounts in the database?</string>
     <string name="update_pin_code_msg">Are you sure you want to update your pin code?</string>
-
     <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
     <string name="delete">Delete</string>
     <string name="update">Update</string>
@@ -66,8 +65,26 @@
     <string name="first_open_message_header">Thank you for choosing Password Secure Kiwi!</string>
     <string name="first_open_message">\nThis application prioritizes your privacy and does not store your data anywhere besides physically
         on your device. For full transparency, source code for Password Secure Kiwi can be found on
-        <a href="https://github.com/robertyano/password_secure_kiwi">GitHub.</a>\n\nPlease support independent developers by recommending Password Secure Kiwi to your family and friends!</string>
+        <a href="https://github.com/robertyano/password_secure_kiwi">GitHub.</a>\n\nPlease support independent
+        developers by recommending Password Secure Kiwi to your family and friends!</string>
     <string name="first_message_confirmation">Got it!</string>
+    <string name="export_accounts_intro">To export Password Secure Kiwi\'s data, please follow
+        these instructions:</string>
+    <string name="export_accounts_steps">\n1. Download data into a CSV file. This can be done by
+        clicking the button at the bottom of this page.\n\n2. Transfer CSV file to new phone. This can
+        be done by emailing the CSV file to yourself and opening the file on your new phone. However,
+        if you\'re more tech savy, then we recommend doing this in a more secure manner by directly
+        transferring the CSV file to your computer and then transferring it directly to your phone.
+        A great tool for transferring android files from your phone to your computer
+        is \'Android File Transfer.\'\n\n3. Open Password Secure Kiwi on your new device.\n\n4.
+        Go to the menu and select \'Import Accounts.\'\n\n5. Attach the CSV file with your data and
+        select \'Import Accounts.\' if this gets longer what happens to the card does it scroll or will
+        I need to incorporate the damn scrolling myself manually</string>
+
+
+
+
+
 
     <!-- Labels for editor menu option [CHAR LIMIT=20] -->
     <string name="action_save">Save</string>
@@ -87,10 +104,6 @@
 
 
     <!-- PREFERENCES STRINGS -->
-    <!-- Activity Title -->
-    <string name="preferences_title" translatable="false">Preferences</string>
-
-
     <!-- Order preference-->
     <string name="pref_order_by_key" translatable="false">order_by</string>
     <string name="pref_order_by_default" translatable="false">@string/pref_order_by_account_value</string>

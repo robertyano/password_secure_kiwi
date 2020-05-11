@@ -57,5 +57,5 @@
     <string name="first_message_confirmation">Entendido!</string>
     <string name="view_source_code">Ver código</string>
     <string name="export_accounts">Exportar cuentas</string>
-    <string name="export_accounts_overview">Información para exportar cuentas</string>
+    <string name="export_accounts_overview">Exportar cuentas</string>
 </resources>
