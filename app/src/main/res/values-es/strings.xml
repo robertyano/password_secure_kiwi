@@ -58,4 +58,17 @@
     <string name="view_source_code">Ver código</string>
     <string name="export_accounts">Exportar cuentas</string>
     <string name="export_accounts_overview">Exportar cuentas</string>
+    <string name="export_accounts_intro">Para exportar los datos de Password Secure Kiwi, siga estas instrucciones:</string>
+    <string name="export_accounts_steps">\n1. Descargue datos en un archivo CSV haciendo clic en el
+        botón al final de esta página.\n\n2. Transfiera el archivo CSV al nuevo teléfono. Esto se puede
+        hacer de dos maneras diferentes:\nOpción 1: Envíe por correo electrónico el archivo CSV
+        y abra este archivo desde el correo electrónico en el nuevo teléfono.\nOpción 2: Transfiera
+        directamente el archivo CSV desde su teléfono a su computadora, y luego desde su computadora
+        a su nuevo teléfono. Una software muy bueno para transferir archivos es
+        \'Android File Transfer.\'\n\n3. Abra Password Secure Kiwi en su nuevo dispositivo.\n\n4. Vaya
+        al menú y seleccione \'Importar Cuentas.\'\n\n5. Adjunte el archivo CSV con sus datos y
+        seleccione \'Importar cuentas.\'</string>
+    <string name="btn_download_csv">Descargar CSV</string>
+
+
 </resources>

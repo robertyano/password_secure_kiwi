@@ -26,6 +26,7 @@
     <string name="currently_unavailable">Currently unavailable</string>
 
     <!-- Buttons -->
+    <string name="btn_download_csv">Download CSV</string>
 
     <!-- Toast / Validation messages -->
     <string name="toast_insert_account_failed">Error adding account</string>
@@ -70,16 +71,15 @@
     <string name="first_message_confirmation">Got it!</string>
     <string name="export_accounts_intro">To export Password Secure Kiwi\'s data, please follow
         these instructions:</string>
-    <string name="export_accounts_steps">\n1. Download data into a CSV file. This can be done by
-        clicking the button at the bottom of this page.\n\n2. Transfer CSV file to new phone. This can
-        be done by emailing the CSV file to yourself and opening the file on your new phone. However,
-        if you\'re more tech savy, then we recommend doing this in a more secure manner by directly
-        transferring the CSV file to your computer and then transferring it directly to your phone.
-        A great tool for transferring android files from your phone to your computer
-        is \'Android File Transfer.\'\n\n3. Open Password Secure Kiwi on your new device.\n\n4.
+    <string name="export_accounts_steps">\n1. Download data into a CSV file by clicking the button
+        at the bottom of this page.\n\n2. Transfer CSV file to new phone. This can
+        be done two different ways:\nOption 1: Email the CSV file to yourself and open this file from the
+        email on the new phone.\nOption 2: Directly transfer the CSV file from your phone to your computer,
+        and then from your computer to your new phone. A great desktop tool for transferring files is
+        \'Android File Transfer.\'\n\n3. Open Password Secure Kiwi on your new device.\n\n4.
         Go to the menu and select \'Import Accounts.\'\n\n5. Attach the CSV file with your data and
-        select \'Import Accounts.\' if this gets longer what happens to the card does it scroll or will
-        I need to incorporate the damn scrolling myself manually</string>
+        select \'Import Accounts.\'
+        </string>
 
 
 
