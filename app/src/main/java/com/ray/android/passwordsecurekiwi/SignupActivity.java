@@ -8,6 +8,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
+import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -33,7 +34,6 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         context = getApplicationContext();
         setContentView(R.layout.activity_signup);
-
 
         _inputPinCode = findViewById(R.id.input_pin_code);
         _inputPinCodeConfirmation = findViewById(R.id.input_pin_code_confirmation);

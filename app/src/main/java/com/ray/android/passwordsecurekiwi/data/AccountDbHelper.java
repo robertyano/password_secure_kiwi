@@ -119,7 +119,6 @@ public class AccountDbHelper extends SQLiteOpenHelper {
     }
 
     //function used for fetching data for exporting database
-
     public Cursor raw() {
 
         SQLiteDatabase db = this.getReadableDatabase();

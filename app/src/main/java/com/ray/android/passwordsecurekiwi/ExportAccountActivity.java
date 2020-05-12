@@ -1,11 +1,14 @@
 package com.ray.android.passwordsecurekiwi;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.StrictMode;
 import android.view.View;
 import android.widget.Toast;
 
@@ -31,6 +34,10 @@ public class ExportAccountActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // TEST TEST TEST
+        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+        StrictMode.setVmPolicy(builder.build());
+
         setContentView(R.layout.account_export);
 
         // Change the app bar to say "Export Accounts OverView"
@@ -42,6 +49,7 @@ public class ExportAccountActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 new ExportDatabaseCSVTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                ShareFile();
             }
         });
     }
@@ -94,6 +102,18 @@ public class ExportAccountActivity extends AppCompatActivity {
                 Toast.makeText(ExportAccountActivity.this, "Export failed", Toast.LENGTH_LONG).show();
             }
         }
+    }
+
+    // Function to share CSV file via email or other options
+    private void ShareFile() {
+        File exportDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "");
+        String fileName = "Password_Secure_Kiwi_data.csv";
+        File sharingGifFile = new File(exportDir, fileName);
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("application/csv");
+        Uri uri = Uri.fromFile(sharingGifFile);
+        shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
+        startActivity(Intent.createChooser(shareIntent, "Share CSV"));
     }
 
 
