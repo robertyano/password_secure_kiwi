@@ -1,6 +1,7 @@
 package com.ray.android.passwordsecurekiwi;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -19,6 +20,9 @@ import com.ray.android.passwordsecurekiwi.data.AccountLogin;
 public class SignupActivity extends AppCompatActivity {
     private static final String TAG = "SignupActivity";
 
+    // Global Context
+    public static Context context;
+
     EditText _inputPinCode;
     EditText _inputPinCodeConfirmation;
     AppCompatButton _signupButton;
@@ -27,7 +31,9 @@ public class SignupActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        context = getApplicationContext();
         setContentView(R.layout.activity_signup);
+
 
         _inputPinCode = findViewById(R.id.input_pin_code);
         _inputPinCodeConfirmation = findViewById(R.id.input_pin_code_confirmation);

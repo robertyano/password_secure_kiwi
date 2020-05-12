@@ -4,6 +4,10 @@
     tools:ignore="GoogleAppIndexingWarning"
     package="com.ray.android.passwordsecurekiwi">
 
+    <!-- Added permissions to create CSV files for exports -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:name="com.ray.android.passwordsecurekiwi.AccountApplication"
         android:allowBackup="false"

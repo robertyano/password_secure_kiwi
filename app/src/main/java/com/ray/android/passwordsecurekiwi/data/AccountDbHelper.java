@@ -118,5 +118,15 @@ public class AccountDbHelper extends SQLiteOpenHelper {
         return pin_code;
     }
 
+    //function used for fetching data for exporting database
+
+    public Cursor raw() {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("SELECT * FROM " + AccountLogin.AccountEntry.TABLE_NAME, new String[]{});
+
+        return res;
+    }
+
 
 }
