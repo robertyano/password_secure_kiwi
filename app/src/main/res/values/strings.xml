@@ -41,6 +41,10 @@
     <string name="toast_required_account_name">Account Type required</string>
     <string name="toast_required_user_name">User Name required</string>
     <string name="toast_required_pass_code">Pass Code required</string>
+    <string name="toast_exporting_database">Exporting Database...</string>
+    <string name="toast_csv_save_sucessful">CSV file has been saved to Downloads!</string>
+    <string name="toast_csv_unsucessful">Export failed</string>
+
 
 
     <!-- Instructions for the user -->
@@ -97,6 +101,7 @@
     <string name="update_pin_code">Update Pin Code</string>
     <string name="view_source_code">View Source Code</string>
     <string name="export_accounts">Export Accounts</string>
+    <string name="import_accounts">Import Accounts</string>
 
 
     <!-- Asterisk that indicates a required field -->

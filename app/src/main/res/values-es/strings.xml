@@ -69,6 +69,10 @@
         al menú y seleccione \'Importar Cuentas.\'\n\n5. Adjunte el archivo CSV con sus datos y
         seleccione \'Importar cuentas.\'</string>
     <string name="btn_download_csv">Descargar CSV</string>
+    <string name="import_accounts">Importar cuentas</string>
+    <string name="toast_csv_save_sucessful">¡El archivo CSV se ha guardado en Descargas!</string>
+    <string name="toast_csv_unsucessful">Exportación fallida</string>
+    <string name="toast_exporting_database">Exportando fuente de datos...</string>
 
 
 </resources>

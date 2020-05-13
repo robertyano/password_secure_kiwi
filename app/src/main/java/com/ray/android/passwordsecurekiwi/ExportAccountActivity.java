@@ -60,7 +60,7 @@ public class ExportAccountActivity extends AppCompatActivity {
         AccountDbHelper dbhelper;
         @Override
         protected void onPreExecute() {
-            this.dialog.setMessage("Exporting database...");
+            this.dialog.setMessage(getString(R.string.toast_exporting_database));
             this.dialog.show();
             dbhelper = new AccountDbHelper(ExportAccountActivity.this);
         }
@@ -96,10 +96,12 @@ public class ExportAccountActivity extends AppCompatActivity {
         protected void onPostExecute(final Boolean success) {
             if (this.dialog.isShowing()) { this.dialog.dismiss(); }
             if (success) {
-                Toast.makeText(ExportAccountActivity.this, "CSV file has been saved to Downloads!", Toast.LENGTH_LONG).show();
+                Toast.makeText(ExportAccountActivity.this, getString(R.string.toast_csv_save_sucessful),
+                        Toast.LENGTH_LONG).show();
                 // ShareGif();
             } else {
-                Toast.makeText(ExportAccountActivity.this, "Export failed", Toast.LENGTH_LONG).show();
+                Toast.makeText(ExportAccountActivity.this, getString(R.string.toast_csv_unsucessful),
+                        Toast.LENGTH_LONG).show();
             }
         }
     }
