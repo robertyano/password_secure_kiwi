@@ -75,6 +75,7 @@
     <string name="toast_exporting_database">Exportando fuente de datos...</string>
     <string name="import_accounts_overview">Importar cuentas</string>
     <string name="import_accounts_intro">placeholder</string>
+    <string name="btn_import_csv">Importar CSV</string>
 
 
 </resources>
