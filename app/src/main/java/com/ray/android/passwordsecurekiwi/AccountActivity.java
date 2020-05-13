@@ -407,6 +407,13 @@ public class AccountActivity extends AppCompatActivity implements LoaderManager.
                 startActivity(intentExportAccount);
                 return true;
 
+            // Responds to a click on the "Import Accounts" menu option
+            case R.id.import_accounts:
+                // Open ImportAccountActivity
+                Intent intentImportAccount = new Intent(AccountActivity.this, ImportAccountActivity.class);
+                startActivity(intentImportAccount);
+                return true;
+
             // Responds to a click on the "View Source Code" menu option
             case R.id.view_source_code:
                 // Send to GitHub to view code

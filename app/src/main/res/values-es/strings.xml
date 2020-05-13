@@ -73,6 +73,8 @@
     <string name="toast_csv_save_sucessful">¡El archivo CSV se ha guardado en Descargas!</string>
     <string name="toast_csv_unsucessful">Exportación fallida</string>
     <string name="toast_exporting_database">Exportando fuente de datos...</string>
+    <string name="import_accounts_overview">Importar cuentas</string>
+    <string name="import_accounts_intro">placeholder</string>
 
 
 </resources>

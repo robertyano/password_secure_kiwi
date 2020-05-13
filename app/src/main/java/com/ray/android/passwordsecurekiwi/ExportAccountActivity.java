@@ -40,7 +40,7 @@ public class ExportAccountActivity extends AppCompatActivity {
 
         setContentView(R.layout.account_export);
 
-        // Change the app bar to say "Export Accounts OverView"
+        // Change the app bar to say "Export Accounts"
         setTitle(getString(R.string.export_accounts_overview));
 
         // Setup CSV Download Button

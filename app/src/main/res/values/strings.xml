@@ -14,6 +14,7 @@
     <!-- Text Labels for fields in the editor and account exports [CHAR LIMIT=30] -->
     <string name="label_overview">Overview</string>
     <string name="export_accounts_overview">Export Accounts</string>
+    <string name="import_accounts_overview">Import Accounts</string>
 
 
     <!-- Text hints and units for fields in the editor [CHAR LIMIT=30] -->
@@ -84,6 +85,8 @@
         Go to the menu and select \'Import Accounts.\'\n\n5. Attach the CSV file with your data and
         select \'Import Accounts.\'
         </string>
+    <string name="import_accounts_intro">To import Password Secure Kiwi\'s data, please follow
+        these instructions:</string>
 
 
 
