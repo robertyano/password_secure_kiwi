@@ -29,6 +29,7 @@
     <!-- Buttons -->
     <string name="btn_download_csv">Download CSV</string>
     <string name="btn_import_csv">Import CSV</string>
+    <string name="btn_attach_file">Choose File</string>
 
     <!-- Toast / Validation messages -->
     <string name="toast_insert_account_failed">Error adding account</string>
@@ -58,6 +59,10 @@
     <string name="digit_pin_4_confirmation">4 Digit Pin Code Confirmation</string>
     <string name="sign_up_info">This pin code will be used to access your account details. Please
         make sure that you remember this code.</string>
+    <string name="import_step_1">Step 1: Attach CSV file containing account details with button below.
+        The attached filed must be the formatted file downloaded from Password Secure Kiwi.</string>
+    <string name="import_step_2">Step 2: Select \'Import CSV\' button</string>
+
 
     <!-- Confirmation dialog labels and messages -->
     <string name="delete_dialog_msg">Delete this account?</string>
@@ -88,6 +93,8 @@
         </string>
     <string name="import_accounts_intro">To import Password Secure Kiwi\'s data, please follow
         these instructions:</string>
+    <string name="import_attach_file_selection">Please select a file..</string>
+
 
 
 

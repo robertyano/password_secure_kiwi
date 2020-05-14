@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/AccountExportRelativeLayout"
+    android:layout_margin="@dimen/base_dim"
+    app:cardBackgroundColor="@android:color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        >
+
+        <!-- Top Introduction -->
+        <TextView
+            android:id="@+id/import_accounts_intro"
+            style="@style/LabelStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/base_dim"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/import_accounts_intro"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:layout_margin="@dimen/base_dim"
+            />
+
+        <TextView
+            android:id="@+id/import_step_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/import_accounts_intro"
+            android:layout_marginTop="@dimen/double_dim"
+            android:text="@string/import_step_1"
+            android:layout_marginLeft="@dimen/base_dim"
+            />
+
+        <Button
+            android:id="@+id/btn_attach_file"
+            android:layout_width="@dimen/edit_btn_size_length"
+            android:layout_height="@dimen/edit_btn_size_width"
+            android:background="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@id/import_step_1"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/half_dim"
+            android:layout_marginLeft="@dimen/base_dim"
+            android:text="@string/btn_attach_file"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/edit_btn_size_width"
+            app:layout_constraintStart_toEndOf="@id/btn_attach_file"
+            app:layout_constraintTop_toBottomOf="@id/import_step_1"
+            android:layout_marginLeft="@dimen/half_dim"
+            android:layout_marginTop="@dimen/half_dim"
+            android:text="@string/import_attach_file_selection"
+            android:gravity="center_vertical"
+            />
+
+        <TextView
+            android:id="@+id/import_step_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_attach_file"
+            android:layout_marginLeft="@dimen/base_dim"
+            android:layout_marginTop="@dimen/wide_dim"
+            android:text="@string/import_step_2"
+
+
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_import_csv"
+            android:layout_width="@dimen/edit_btn_size_length"
+            android:layout_height="@dimen/edit_btn_size_width"
+            android:layout_marginTop="@dimen/base_dim"
+            android:background="@color/colorFabButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/import_step_2"
+            android:layout_marginLeft="@dimen/base_dim"
+            android:text="@string/btn_import_csv"
+            android:textColor="@android:color/white"
+
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

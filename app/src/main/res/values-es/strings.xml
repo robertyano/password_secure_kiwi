@@ -74,8 +74,12 @@
     <string name="toast_csv_unsucessful">Exportación fallida</string>
     <string name="toast_exporting_database">Exportando fuente de datos...</string>
     <string name="import_accounts_overview">Importar cuentas</string>
-    <string name="import_accounts_intro">placeholder</string>
+    <string name="import_accounts_intro">Para importar los datos de Password Secure Kiwi, siga estas instrucciones</string>
     <string name="btn_import_csv">Importar CSV</string>
+    <string name="import_attach_file_selection">Selecionne un archivo...</string>
+    <string name="import_step_1">Paso 1: Adjunte el archivo CSV que contiene los detalles de la cuenta con el botón debajo. El archivo adjuntado debe ser el archivo formateado y descargado de Password Secure Kiwi.</string>
+    <string name="import_step_2">Paso 2: Selecciona el botón \'Importar CSV\'</string>
+    <string name="btn_attach_file">Selecionar Archivo</string>
 
 
 </resources>
