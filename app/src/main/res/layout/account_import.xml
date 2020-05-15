@@ -32,13 +32,14 @@
 
         <TextView
             android:id="@+id/import_step_1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/import_accounts_intro"
             android:layout_marginTop="@dimen/double_dim"
             android:text="@string/import_step_1"
             android:layout_marginLeft="@dimen/base_dim"
+            android:layout_marginRight="@dimen/base_dim"
             />
 
         <Button
@@ -48,20 +49,24 @@
             android:background="@android:color/white"
             app:layout_constraintTop_toBottomOf="@id/import_step_1"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="@dimen/half_dim"
+            android:layout_marginTop="@dimen/base_dim"
             android:layout_marginLeft="@dimen/base_dim"
             android:text="@string/btn_attach_file"
             />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/file_attached"
+            android:layout_width="0dp"
             android:layout_height="@dimen/edit_btn_size_width"
             app:layout_constraintStart_toEndOf="@id/btn_attach_file"
             app:layout_constraintTop_toBottomOf="@id/import_step_1"
-            android:layout_marginLeft="@dimen/half_dim"
-            android:layout_marginTop="@dimen/half_dim"
+            app:layout_constraintEnd_toEndOf="@id/import_step_1"
+            android:layout_marginLeft="@dimen/base_dim"
+            android:layout_marginTop="@dimen/base_dim"
             android:text="@string/import_attach_file_selection"
             android:gravity="center_vertical"
+            android:singleLine="false"
+            android:ellipsize="end"
             />
 
         <TextView
