@@ -94,33 +94,6 @@ public class ImportAccountActivity extends AppCompatActivity {
                 SQLiteDatabase db = database.getWritableDatabase();
 
 
-                /*InputStream is = null;
-                try {
-                    is = getAssets().open(mCSVfile);
-                    BufferedReader br = new BufferedReader(new InputStreamReader(is));
-                    String line = "";
-                    String tableName = AccountLogin.AccountEntry.TABLE_NAME;
-                    String columns = "_id, account_title, user_name, account_password, account_notes";
-                    String str1 = "INSERT INTO " + tableName + " (" + columns + ") values(";
-                    String str2 = ");";
-
-                    db.beginTransaction();
-                    while ((line = buffer.readLine()) != null) {
-                        StringBuilder sb = new StringBuilder(str1);
-                        String[] str = line.split(",");
-                        sb.append("'" + str[0] + "',");
-                        sb.append(str[1] + "',");
-                        sb.append(str[2] + "',");
-                        sb.append(str[3] + "'");
-                        sb.append(str[4] + "'");
-                        sb.append(str2);
-                        db.execSQL(sb.toString());
-                    }
-                    db.setTransactionSuccessful();
-                    db.endTransaction();*/
-
-                    // InputStream inStream = getAssets().open(mCSVfile);
-
                 InputStream inStream = null;
                 try {
                     inStream = getContentResolver().openInputStream(returnUri);
@@ -165,14 +138,13 @@ public class ImportAccountActivity extends AppCompatActivity {
                     db.setTransactionSuccessful();
                     db.endTransaction();
 
-                    Toast.makeText(ImportAccountActivity.this, "CSV IMPORT HAS BEEN CLICKED",
+                    Toast.makeText(ImportAccountActivity.this, R.string.toast_csv_import_sucessful,
                             Toast.LENGTH_LONG).show();
 
+                // Open intent to go back to account_main.xml
+                Intent intent = new Intent(ImportAccountActivity.this, AccountActivity.class);
+                startActivity(intent);
 
-                /*} catch (IOException e) {
-                    e.printStackTrace();
-                    Log.e("ImportAccountActivity", "importOnClick: " + "Import didn't work" );
-                }*/
 
 
 

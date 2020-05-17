@@ -80,6 +80,8 @@
     <string name="import_step_1">Paso 1: Adjunte el archivo CSV que contiene los detalles de la cuenta con el botón debajo. El archivo adjuntado debe ser el archivo formateado y descargado de Password Secure Kiwi.</string>
     <string name="import_step_2">Paso 2: Selecciona el botón \'Importar CSV\'</string>
     <string name="btn_attach_file">Selecionar Archivo</string>
+    <string name="toast_csv_import_sucessful">¡El archivo CSV ha importado las cuentas!</string>
+    <string name="import_accounts_selected">" ha sido seleccionado!"</string>
 
 
 </resources>
