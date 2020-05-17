@@ -73,7 +73,11 @@ public class ExportAccountActivity extends AppCompatActivity {
             File file = new File(exportDir, "Password_Secure_Kiwi_data.csv");
             try {
                 file.createNewFile();
-                CSVWriter csvWrite = new CSVWriter(new FileWriter(file));
+                CSVWriter csvWrite = new CSVWriter(new FileWriter(file),
+                        CSVWriter.DEFAULT_SEPARATOR,
+                        CSVWriter.NO_QUOTE_CHARACTER,
+                        CSVWriter.DEFAULT_ESCAPE_CHARACTER,
+                        CSVWriter.DEFAULT_LINE_END);
                 Cursor curCSV = dbhelper.raw();
                 csvWrite.writeNext(curCSV.getColumnNames());
                 while(curCSV.moveToNext()) {

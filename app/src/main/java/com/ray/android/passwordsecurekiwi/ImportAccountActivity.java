@@ -131,13 +131,23 @@ public class ImportAccountActivity extends AppCompatActivity {
                 BufferedReader buffer = new BufferedReader(new InputStreamReader(inStream));
                 String line = "";
                 db.beginTransaction();
+                // Have file skip first row with header columns
+                boolean skip = true;
                 try {
                     while ((line = buffer.readLine()) != null) {
+                        // File skips first row and sets variable to false, so that all other
+                        // lines get imported into DB
+                        if(skip) {
+                            skip = false; // Skip only the first line
+                            continue; }
+
                         String[] colums = line.split(",");
                         if (colums.length != 5) {
                             Log.e("CSVParser", "Skipping Bad CSV Row");
                             continue;
                         }
+
+
 
 
                         ContentValues cv = new ContentValues();
