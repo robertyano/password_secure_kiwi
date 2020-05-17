@@ -1,8 +1,12 @@
 package com.ray.android.passwordsecurekiwi;
 
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -19,6 +23,8 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -34,7 +40,24 @@ public class ImportAccountActivity extends AppCompatActivity {
 
     TextView textFile;
 
+    String FilePath;
+
+    BufferedReader buffer;
+
+    Cursor returnCursor;
+
+    int nameIndex;
+
+    String mCSVfile;
+
+    Intent intent2;
+
+    Uri returnUri;
+
+
     private static final int PICKFILE_RESULT_CODE = 1;
+
+    private static final int IMPORTFILE_RESULT_CODE = 1;
 
     // Called when the activity is first created
     @Override
@@ -48,6 +71,8 @@ public class ImportAccountActivity extends AppCompatActivity {
 
         Button btn_choose_file = findViewById(R.id.btn_attach_file);
         textFile = findViewById(R.id.file_attached);
+        // Setup CSV Import Button
+        AppCompatButton btn_csv_import = findViewById(R.id.btn_import_csv);
 
         btn_choose_file.setOnClickListener(new Button.OnClickListener(){
             @Override
@@ -58,6 +83,95 @@ public class ImportAccountActivity extends AppCompatActivity {
                 startActivityForResult(intent,PICKFILE_RESULT_CODE);
 
             }});
+
+        // Testing the Import in OnClickListener
+        btn_csv_import.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // Access Database to be writable
+                SQLiteOpenHelper database = new AccountDbHelper(getApplicationContext());
+                SQLiteDatabase db = database.getWritableDatabase();
+
+
+                /*InputStream is = null;
+                try {
+                    is = getAssets().open(mCSVfile);
+                    BufferedReader br = new BufferedReader(new InputStreamReader(is));
+                    String line = "";
+                    String tableName = AccountLogin.AccountEntry.TABLE_NAME;
+                    String columns = "_id, account_title, user_name, account_password, account_notes";
+                    String str1 = "INSERT INTO " + tableName + " (" + columns + ") values(";
+                    String str2 = ");";
+
+                    db.beginTransaction();
+                    while ((line = buffer.readLine()) != null) {
+                        StringBuilder sb = new StringBuilder(str1);
+                        String[] str = line.split(",");
+                        sb.append("'" + str[0] + "',");
+                        sb.append(str[1] + "',");
+                        sb.append(str[2] + "',");
+                        sb.append(str[3] + "'");
+                        sb.append(str[4] + "'");
+                        sb.append(str2);
+                        db.execSQL(sb.toString());
+                    }
+                    db.setTransactionSuccessful();
+                    db.endTransaction();*/
+
+                    // InputStream inStream = getAssets().open(mCSVfile);
+
+                InputStream inStream = null;
+                try {
+                    inStream = getContentResolver().openInputStream(returnUri);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                    Log.e("ImportAccountActivity", "INPUT STREAM WAS NOT OPENED");
+                }
+                BufferedReader buffer = new BufferedReader(new InputStreamReader(inStream));
+                String line = "";
+                db.beginTransaction();
+                try {
+                    while ((line = buffer.readLine()) != null) {
+                        String[] colums = line.split(",");
+                        if (colums.length != 5) {
+                            Log.e("CSVParser", "Skipping Bad CSV Row");
+                            continue;
+                        }
+
+
+                        ContentValues cv = new ContentValues();
+                        // cv.put("_id", colums[0].trim());
+                        cv.put("account_title", colums[1].trim());
+                        cv.put("user_name", colums[2].trim());
+                        cv.put("account_password", colums[3].trim());
+                        cv.put("account_notes", colums[4].trim());
+                        db.insert(AccountLogin.AccountEntry.TABLE_NAME, null, cv);
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        Log.e("ImportAccountActivity", "DATABASE didn't have a chance to parse");
+                    }
+                    db.setTransactionSuccessful();
+                    db.endTransaction();
+
+                    Toast.makeText(ImportAccountActivity.this, "CSV IMPORT HAS BEEN CLICKED",
+                            Toast.LENGTH_LONG).show();
+
+
+                /*} catch (IOException e) {
+                    e.printStackTrace();
+                    Log.e("ImportAccountActivity", "importOnClick: " + "Import didn't work" );
+                }*/
+
+
+
+            }
+        });
+
+
+
+
     }
 
     @Override
@@ -66,32 +180,46 @@ public class ImportAccountActivity extends AppCompatActivity {
         switch (requestCode) {
             case PICKFILE_RESULT_CODE:
                 if (resultCode == RESULT_OK) {
-                    String FilePath = data.getData().getPath();
+                    FilePath = data.getData().getPath();
+                    // Uri returnUri = data.getData();  Removed for test
+                    returnUri = data.getData();
 
-                    Uri returnUri = data.getData();
-                    Cursor returnCursor =
-                            getContentResolver().query(returnUri, null, null, null, null);
+
+                    returnCursor = getContentResolver().query(returnUri, null,
+                            null, null, null);
+
+
 
                     /*
                      * Get the column indexes of the data in the Cursor,
                      * move to the first row in the Cursor, get the data,
                      * and display it.
                      */
-                    int nameIndex = returnCursor.getColumnIndex(OpenableColumns.DISPLAY_NAME);
+                    nameIndex = returnCursor.getColumnIndex(OpenableColumns.DISPLAY_NAME);
+
 
                     returnCursor.moveToFirst();
 
+                    // Get name of CSV file that was attached
+                    mCSVfile = returnCursor.getString(nameIndex);
 
-                    Log.e("ImportAccountActivity","data: " + data );
+
+                    Log.e("ImportAccountActivity","FilePath:" + FilePath );
+                    Log.e("ImportAccountActivity","ReturnCursor:" + returnCursor);
+                    Log.e("ImportAccountActivity","mCSVfile:" + mCSVfile);
 
                     textFile.setText(returnCursor.getString(nameIndex) + " has been selected!");
 
-                    //textFile.setText(FilePath);
+
+
+
                 }
                 break;
 
+
         }
     }
+
 }
 
 
