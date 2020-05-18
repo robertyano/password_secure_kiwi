@@ -114,9 +114,13 @@ public class ImportAccountActivity extends AppCompatActivity {
                             skip = false; // Skip only the first line
                             continue; }
 
-                        String[] colums = line.split(",");
+
+
+                        String[] colums = line.split(",", -1);
                         if (colums.length != 5) {
                             Log.e("CSVParser", "Skipping Bad CSV Row");
+                            Log.e("CSVParser", "Skipping:" + colums[4].trim());
+                            Log.e("CSVParser", "Columns length: " + colums.length);
                             continue;
                         }
 
