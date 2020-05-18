@@ -110,7 +110,7 @@ public class ExportAccountActivity extends AppCompatActivity {
         }
     }
 
-    // Function to share CSV file via email or other options
+    // Function to share CSV file via email or other apps
     private void ShareFile() {
         File exportDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "");
         String fileName = "Password_Secure_Kiwi_data.csv";
