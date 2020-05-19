@@ -116,7 +116,7 @@ public class ImportAccountActivity extends AppCompatActivity {
 
 
 
-                        String[] colums = line.split(",", -1);
+                        String[] colums = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
                         if (colums.length != 5) {
                             Log.e("CSVParser", "Skipping Bad CSV Row");
                             Log.e("CSVParser", "Skipping:" + colums[4].trim());
@@ -128,11 +128,12 @@ public class ImportAccountActivity extends AppCompatActivity {
 
 
                         ContentValues cv = new ContentValues();
+                        // ADDED replace for parsing tests
                         // cv.put("_id", colums[0].trim());
-                        cv.put("account_title", colums[1].trim());
-                        cv.put("user_name", colums[2].trim());
-                        cv.put("account_password", colums[3].trim());
-                        cv.put("account_notes", colums[4].trim());
+                        cv.put("account_title", colums[1].trim().replace('`',','));
+                        cv.put("user_name", colums[2].trim().replace('`',','));
+                        cv.put("account_password", colums[3].trim().replace('`',','));
+                        cv.put("account_notes", colums[4].trim().replace('`',','));
                         db.insert(AccountLogin.AccountEntry.TABLE_NAME, null, cv);
                         }
                     } catch (IOException e) {

@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -67,10 +68,10 @@ public class ExportAccountActivity extends AppCompatActivity {
 
         protected Boolean doInBackground(final String... args) {
 
-            File exportDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "");
-            if (!exportDir.exists()) { exportDir.mkdirs(); }
+           /* File exportDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "");
+            if (!exportDir.exists()) { exportDir.mkdirs(); }*/
 
-            File file = new File(exportDir, "Password_Secure_Kiwi_data.csv");
+            File file = new File(getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS), "Password_Secure_Kiwi_data.csv");
             try {
                 file.createNewFile();
                 CSVWriter csvWrite = new CSVWriter(new FileWriter(file),
@@ -85,7 +86,7 @@ public class ExportAccountActivity extends AppCompatActivity {
                     String[] mySecondStringArray = new String[curCSV.getColumnNames().length];
                     for(int i=0;i<curCSV.getColumnNames().length;i++)
                     {
-                        mySecondStringArray[i] =curCSV.getString(i);
+                        mySecondStringArray[i] =curCSV.getString(i).replace(',', '`');   /// ADDED REPLACE FOR PARSING TEST
                     }
                     csvWrite.writeNext(mySecondStringArray);
                 }
@@ -93,6 +94,7 @@ public class ExportAccountActivity extends AppCompatActivity {
                 curCSV.close();
                 return true;
             } catch (IOException e) {
+                Log.e("ExportAccountActivity", "Exception: " + e);
                 return false;
             }
         }
@@ -112,7 +114,7 @@ public class ExportAccountActivity extends AppCompatActivity {
 
     // Function to share CSV file via email or other apps
     private void ShareFile() {
-        File exportDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "");
+        File exportDir = new File(getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS), "");
         String fileName = "Password_Secure_Kiwi_data.csv";
         File sharingGifFile = new File(exportDir, fileName);
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
