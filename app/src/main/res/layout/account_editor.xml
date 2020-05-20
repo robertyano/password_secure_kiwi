@@ -185,7 +185,8 @@
                 android:paddingTop="@dimen/half_dim"
                 android:singleLine="true"
                 android:textSize="@dimen/text_size_m"
-                android:maxLength="1000"/>
+                android:maxLength="1000"
+                />
 
 
         </com.google.android.material.textfield.TextInputLayout>
