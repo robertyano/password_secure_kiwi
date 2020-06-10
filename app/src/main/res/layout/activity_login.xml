@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fitsSystemWindows="true">
 
     <LinearLayout
@@ -33,7 +34,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="8dp"
+            android:textColorHint="@color/mediumTextColor" >
 
             <EditText android:id="@+id/input_password"
                 android:layout_width="match_parent"
@@ -41,7 +43,11 @@
                 android:hint="@string/pin_code"
                 android:password="true"
                 android:inputType="phone"
-                android:maxLength="4"/>
+                android:maxLength="4"
+                android:textColor="@color/darkTextColor"
+                app:backgroundTint="@color/cardview_dark_background"
+                android:backgroundTint="@color/cardview_dark_background"
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatButton

@@ -75,7 +75,7 @@
                 android:paddingStart="@dimen/base_dim"
                 android:paddingTop="@dimen/half_dim"
                 android:text="@string/order_by_toolbar_results_found"
-                android:textColor="@android:color/white"
+                android:textColor="@color/lightTextColor"
                 android:layout_marginRight="@dimen/base_dim"
                 />
 

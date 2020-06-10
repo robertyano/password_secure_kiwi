@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fitsSystemWindows="true"
-    tools:context="com.ray.android.passwordsecurekiwi.SignupActivity" >
+    tools:context="com.ray.android.passwordsecurekiwi.SignupActivity">
 
     <LinearLayout
         android:orientation="vertical"
@@ -36,7 +36,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="8dp"
+            android:textColorHint="@color/mediumTextColor"
+            >
 
             <EditText android:id="@+id/input_pin_code"
                 android:layout_width="match_parent"
@@ -44,7 +46,10 @@
                 android:password="true"
                 android:inputType="phone"
                 android:hint="@string/digit_pin_4"
-                android:maxLength="4"/>
+                android:maxLength="4"
+                android:textColor="@color/darkTextColor"
+                app:backgroundTint="@color/cardview_dark_background"
+                android:backgroundTint="@color/cardview_dark_background"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Pin Code Confirmation Label -->
@@ -54,7 +59,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="8dp"
+            android:textColorHint="@color/mediumTextColor"
+             >
 
             <EditText
                 android:id="@+id/input_pin_code_confirmation"
@@ -64,6 +71,9 @@
                 android:password="true"
                 android:inputType="phone"
                 android:maxLength="4"
+                android:textColor="@color/darkTextColor"
+                app:backgroundTint="@color/cardview_dark_background"
+                android:backgroundTint="@color/cardview_dark_background"
                 />
         </com.google.android.material.textfield.TextInputLayout>
 

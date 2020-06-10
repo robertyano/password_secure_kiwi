@@ -68,7 +68,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:text="@string/btn_download_csv"
-            android:textColor="@android:color/white"
+            android:textColor="@color/lightTextColor"
 
             />
 

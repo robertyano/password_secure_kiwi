@@ -15,7 +15,11 @@
     <style name="Theme.TransparentAppBar" parent="Base.Theme.TransparentAppBar">
         <item name="android:windowDrawsSystemBarBackgrounds" tools:targetApi="lollipop">true</item>
         <item name="android:statusBarColor" tools:targetApi="lollipop">@android:color/transparent</item>
+        <item name="android:textColorHint">@color/mediumTextColor</item>
     </style>
+
+
+
 
     <!-- Main Activity theme -->
     <style name="Base.Theme.TransparentAppBar" parent="Theme.AppCompat.NoActionBar">
@@ -23,6 +27,10 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/offWhiteColor</item>
+        <item name="android:textColorHint">@color/mediumTextColor</item>
+        <item name="colorControlNormal">@color/mediumTextColor</item>
+        <item name="colorControlHighlight">@color/mediumTextColor</item>
+        <item name="colorControlActivated">@color/mediumTextColor</item>
         <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/quicksand</item>
         <!-- fontFamily: target android sdk versions < 26 and > 14 if theme other than AppCompat -->
         <item name="fontFamily">@font/quicksand</item>
@@ -36,12 +44,13 @@
     </style>
 
     <!-- Theme of the editor and any activity requiring an action bar -->
-    <style name="ActionBarTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="ActionBarTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <item name="android:windowBackground">@color/offWhiteColor</item>
         <item name="android:statusBarColor" tools:targetApi="lollipop">@color/colorPrimaryDark</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorHint">@color/semiTransparentBlack</item>
         <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/quicksand_medium</item>
         <!-- fontFamily: target android sdk versions < 26 and > 14 if theme other than AppCompat -->
         <item name="fontFamily">@font/quicksand_medium</item>
@@ -105,11 +114,12 @@
     </style>
 
     <!-- Style for an EditText field in the editor -->
-    <style name="EditorFieldStyle">
+    <style name="EditorFieldStyle" >
         <item name="android:layout_height">@dimen/widest_dim</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:textAppearance">?android:textAppearance</item>
         <item name="android:textColor">@color/darkTextColor</item>
+        <item name="android:textColorHint">@color/cardview_light_background</item>
         <item name="android:paddingStart" tools:targetApi="jelly_bean_mr1">@dimen/half_dim</item>
         <item name="android:paddingEnd" tools:targetApi="jelly_bean_mr1">@dimen/half_dim</item>
         <item name="android:paddingTop">@dimen/quarter_dim</item>
@@ -117,6 +127,10 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:background">@drawable/edittext_bg</item>
     </style>
+
+
+
+
 
     <!-- Style for required field asterisk -->
     <style name="AsteriskStyle">
@@ -147,12 +161,13 @@
 
 
     <!-- Settings Preferences Text Style -->
-    <style name="SettingsFragmentTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="SettingsFragmentTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorPrimaryDark</item>
         <item name="android:windowBackground">@color/colorSecondary</item>
         <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorHint">@color/cardview_light_background</item>
         <item name="android:textColorSecondary">@color/colorPrimary</item>
         <item name="android:textSize">@dimen/text_size_m</item>
         <item name="fontFamily">@font/quicksand_medium</item>

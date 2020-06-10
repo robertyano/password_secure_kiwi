@@ -34,6 +34,7 @@
             android:id="@+id/import_step_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/darkTextColor"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/import_accounts_intro"
             android:layout_marginTop="@dimen/double_dim"
@@ -47,6 +48,7 @@
             android:layout_width="@dimen/edit_btn_size_length"
             android:layout_height="@dimen/edit_btn_size_width"
             android:background="@android:color/white"
+            android:textColor="@color/darkTextColor"
             app:layout_constraintTop_toBottomOf="@id/import_step_1"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="@dimen/base_dim"
@@ -58,6 +60,7 @@
             android:id="@+id/file_attached"
             android:layout_width="0dp"
             android:layout_height="@dimen/edit_btn_size_width"
+            android:textColor="@color/darkTextColor"
             app:layout_constraintStart_toEndOf="@id/btn_attach_file"
             app:layout_constraintTop_toBottomOf="@id/import_step_1"
             app:layout_constraintEnd_toEndOf="@id/import_step_1"
@@ -73,6 +76,7 @@
             android:id="@+id/import_step_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/darkTextColor"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_attach_file"
             android:layout_marginLeft="@dimen/base_dim"
@@ -92,7 +96,7 @@
             app:layout_constraintTop_toBottomOf="@id/import_step_2"
             android:layout_marginLeft="@dimen/base_dim"
             android:text="@string/btn_import_csv"
-            android:textColor="@android:color/white"
+            android:textColor="@color/lightTextColor"
 
             />
 
