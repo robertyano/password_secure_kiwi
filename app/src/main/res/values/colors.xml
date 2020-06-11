@@ -26,13 +26,19 @@
     <!-- App Title color -->
 
     <!-- Background color -->
-    <color name="offWhiteColor">#edf1f4</color>
+    <color name="backgroundColor">#edf1f4</color>
 
     <!-- Text color dark -->
     <color name="darkTextColor">#666666</color>
 
     <!-- Text color dark -->
     <color name="mediumTextColor">#999999</color>
+
+    <!-- Text color EditText -->
+    <color name="EditTextTextColor">#666666</color>
+
+    <!-- Button text color -->
+    <color name="buttonTextColor">@android:color/white</color>
 
     <!-- Text color light -->
     <color name="lightTextColor">#FFFFFF</color>
@@ -44,5 +50,17 @@
 
     <!-- Semi transparent colours -->
     <color name="semiTransparentBlack">#40000000</color>
+
+    <color name="greybutton">#edf1f4</color>
+
+    <color name="cardview_dark_background">#FF424242</color>
+
+    <color name="listItemBackGroundColor">#edf1f4</color>
+
+    <drawable name="ripple">@drawable/ripple</drawable>
+
+    <drawable name="newzealand33">@drawable/newzealand3</drawable>
+
+
 
 </resources>

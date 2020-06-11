@@ -11,6 +11,8 @@
 
     <!-- Button styles -->
     <dimen name="edit_btn_size_length">100dp</dimen>
+    <dimen name="edit_btn_size_length2">105dp</dimen>
+
     <dimen name="edit_btn_size_width">50dp</dimen>
 
     <!-- Default text sizes -->

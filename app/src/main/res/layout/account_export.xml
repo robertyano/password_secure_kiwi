@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:id="@+id/AccountExportRelativeLayout"
     android:layout_margin="@dimen/base_dim"
-    app:cardBackgroundColor="@android:color/white"
+    app:cardBackgroundColor="@color/backgroundColor"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     >
@@ -25,6 +25,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/darkTextColor"
             android:text="@string/export_accounts_intro"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:layout_margin="@dimen/base_dim"

@@ -1,2 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+
+    <!-- Darker variant for the status bar and contextual app bars -->
+    <color name="colorPrimaryDark">#000000</color>
+
+    <!-- The app branding color for the app bar -->
+    <color name="colorPrimary">#000000</color>
+
+    <!-- The app secondary color for preferences screen -->
+    <color name="colorSecondary">#000000</color>
+
+    <!-- Accent color for UI controls like checkboxes and text fields -->
+    <color name="colorAccent">@android:color/white</color>
+
+    <!-- App Title color -->
+
+    <!-- Background color | black in dark mode -->
+    <color name="backgroundColor">#000000</color>
+
+    <!-- Text color dark -->
+    <color name="darkTextColor">@android:color/white</color>
+
+    <!-- Text color dark -->
+    <color name="mediumTextColor">@android:color/white</color>
+
+    <!-- Text color EditText -->
+    <color name="EditTextTextColor">@android:color/black</color>
+
+    <!-- Button text color -->
+    <color name="buttonTextColor">@android:color/white</color>
+
+    <!-- Text color light -->
+    <color name="lightTextColor">@android:color/white</color>
+
+    <!-- FAB button color -->
+    <color name="colorFabButton">#5A5A5C</color>
+
+    <!-- Navigation Bar translucent color -->
+
+    <!-- Semi transparent colours -->
+    <color name="semiTransparentBlack">#40000000</color>
+
+    <color name="greybutton">#5A5A5C</color>
+
+    <color name="cardview_dark_background">@android:color/white</color>
+
+    <color name="listItemBackGroundColor">#353335</color>
+
+    <drawable name="ripple">@drawable/ripple_dark</drawable>
+
+    <drawable name="newzealand33">@drawable/newzealand3_dark</drawable>
+
+
+</resources>

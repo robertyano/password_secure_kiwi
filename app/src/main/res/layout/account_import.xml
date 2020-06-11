@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:id="@+id/AccountExportRelativeLayout"
     android:layout_margin="@dimen/base_dim"
-    app:cardBackgroundColor="@android:color/white"
+    app:cardBackgroundColor="@color/backgroundColor"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     >
@@ -22,6 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/base_dim"
+            android:textColor="@color/darkTextColor"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +35,7 @@
             android:id="@+id/import_step_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/darkTextColor"
+            android:textColor="@color/mediumTextColor"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/import_accounts_intro"
             android:layout_marginTop="@dimen/double_dim"
@@ -43,17 +44,18 @@
             android:layout_marginRight="@dimen/base_dim"
             />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_attach_file"
             android:layout_width="@dimen/edit_btn_size_length"
             android:layout_height="@dimen/edit_btn_size_width"
-            android:background="@android:color/white"
             android:textColor="@color/darkTextColor"
             app:layout_constraintTop_toBottomOf="@id/import_step_1"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="@dimen/base_dim"
             android:layout_marginLeft="@dimen/base_dim"
             android:text="@string/btn_attach_file"
+            android:background="@color/greybutton"
+            android:maxLines="1"
             />
 
         <TextView
@@ -96,7 +98,8 @@
             app:layout_constraintTop_toBottomOf="@id/import_step_2"
             android:layout_marginLeft="@dimen/base_dim"
             android:text="@string/btn_import_csv"
-            android:textColor="@color/lightTextColor"
+            android:maxLines="1"
+            android:textColor="@color/buttonTextColor"
 
             />
 

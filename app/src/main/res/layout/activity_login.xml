@@ -35,14 +35,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:textColorHint="@color/mediumTextColor" >
+            android:textColorHint="@color/mediumTextColor"
+            >
 
             <EditText android:id="@+id/input_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/pin_code"
-                android:password="true"
-                android:inputType="phone"
+                android:inputType="numberPassword"
                 android:maxLength="4"
                 android:textColor="@color/darkTextColor"
                 app:backgroundTint="@color/cardview_dark_background"

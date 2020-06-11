@@ -23,6 +23,7 @@
             style="@style/LabelStyle"
             android:layout_marginStart="@dimen/base_dim"
             android:text="@string/label_overview"
+            android:textColor="@color/darkTextColor"
             app:layout_constraintBottom_toBottomOf="@+id/asterisk_account_type"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/asterisk_account_type"
@@ -72,6 +73,7 @@
                 android:paddingBottom="@dimen/half_dim"
                 android:paddingTop="@dimen/half_dim"
                 android:textSize="@dimen/text_size_m"
+                android:textColor="@color/EditTextTextColor"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -112,7 +114,8 @@
                 android:inputType="text"
                 android:paddingTop="@dimen/half_dim"
                 android:singleLine="true"
-                android:textSize="@dimen/text_size_m" />
+                android:textSize="@dimen/text_size_m"
+                android:textColor="@color/EditTextTextColor"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -156,7 +159,8 @@
                 android:inputType="text"
                 android:paddingTop="@dimen/half_dim"
                 android:singleLine="true"
-                android:textSize="@dimen/text_size_m" />
+                android:textSize="@dimen/text_size_m"
+                android:textColor="@color/EditTextTextColor"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -187,6 +191,7 @@
                 android:singleLine="true"
                 android:textSize="@dimen/text_size_m"
                 android:maxLength="1000"
+                android:textColor="@color/EditTextTextColor"
                 />
 
 
