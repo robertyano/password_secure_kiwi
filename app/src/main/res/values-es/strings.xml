@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Kiwi Secure Passwords</string>
+    <string name="app_name">Password Secure Kiwi</string>
     <string name="action_add">Agregar una cuenta</string>
     <string name="action_delete">Borrar</string>
     <string name="action_delete_all_entries">Eliminar todas las cuentas</string>
