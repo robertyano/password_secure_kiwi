@@ -172,7 +172,9 @@
             app:layout_constraintTop_toBottomOf="@+id/password"
             android:layout_marginLeft="@dimen/half_dim"
             android:layout_marginRight="@dimen/base_dim"
-            android:singleLine="true">
+            android:singleLine="true"
+            >
+
 
             <EditText
                 android:id="@+id/editTextAccountNotes"
@@ -188,6 +190,8 @@
                 android:textSize="@dimen/text_size_m"
                 android:maxLength="1000"
                 android:textColor="@color/EditTextTextColor"
+
+
                 />
 
 
