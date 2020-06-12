@@ -120,10 +120,6 @@
         </com.google.android.material.textfield.TextInputLayout>
 
 
-        <!-- This is the fake one. User Name added after the fact and needs to be included
-         into the SQL Database, making types similar as above two -->
-
-
         <!-- Asterisk -->
         <TextView
             android:id="@+id/asterisk_password"

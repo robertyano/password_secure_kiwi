@@ -39,7 +39,7 @@
                     android:layout_height="match_parent"
                     android:fitsSystemWindows="true"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/newzealand3"
+                    android:src="@drawable/newzealand33"
                     android:contentDescription="@null"
                     app:layout_collapseMode="parallax"
                     />
@@ -108,7 +108,9 @@
                     <!-- Layout for the Views -->
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" >
+                        android:layout_height="match_parent"
+                        android:background="@color/listItemBackGroundColor"
+                        >
 
                         <!-- Label -->
                         <TextView
@@ -118,6 +120,7 @@
                             android:layout_marginStart="@dimen/base_dim"
                             android:layout_marginTop="@dimen/base_dim"
                             android:text="Account"
+                            android:textColor="@color/darkTextColor"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -131,6 +134,7 @@
                             android:layout_marginStart="@dimen/base_dim"
                             android:layout_marginTop="@dimen/wider_dim"
                             android:text="Details"
+                            android:textColor="@color/darkTextColor"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="@+id/label_account"
@@ -170,6 +174,7 @@
                                 android:layout_height="wrap_content"
                                 android:singleLine="false"
                                 android:maxLines="2"
+                                android:textColor="@color/darkTextColor"
                                 android:text="Super long acccount to make the text go over to the second line "
                                 android:textSize="@dimen/text_size_m"
                                 android:layout_marginTop="@dimen/base_dim"
@@ -185,6 +190,7 @@
                                 android:singleLine="false"
                                 android:maxLines="2"
                                 android:text="babycoastla25"
+                                android:textColor="@color/darkTextColor"
                                 android:textSize="@dimen/text_size_m"
                                 android:layout_marginTop="@dimen/wider_dim"
                                  />
@@ -208,7 +214,9 @@
                     <!-- Layout for the Account Notes -->
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" >
+                        android:layout_height="match_parent"
+                        android:background="@color/listItemBackGroundColor"
+                        >
 
                         <!-- Label -->
                         <TextView
@@ -218,6 +226,7 @@
                             android:layout_marginStart="@dimen/base_dim"
                             android:layout_marginTop="@dimen/base_dim"
                             android:text="Notes"
+                            android:textColor="@color/darkTextColor"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -255,6 +264,7 @@
                                     android:singleLine="false"
                                     android:text="When you go to this website make sure to turn off cookies and not allow the computer to save your password. Thisi is very important!! "
                                     android:textSize="@dimen/text_size_m"
+                                    android:textColor="@color/darkTextColor"
                                     android:layout_marginTop="@dimen/base_dim"
                                     android:layout_weight="1.0"
                                     />
