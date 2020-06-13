@@ -1,9 +1,13 @@
 package com.ray.android.passwordsecurekiwi;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+
+import android.preference.PreferenceManager;
 import android.util.Log;
 
 import android.content.Intent;
@@ -27,8 +31,29 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
+        // Added for the test to save preferences for UI mode
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        boolean isDarkModeOn = sharedPreferences.getBoolean("isDarkModeOn", true);
+
+        if (isDarkModeOn) {
+            AppCompatDelegate
+                    .setDefaultNightMode(
+                            AppCompatDelegate
+                                    .MODE_NIGHT_YES);
+        } else {
+            AppCompatDelegate
+                    .setDefaultNightMode(
+                            AppCompatDelegate
+                                    .MODE_NIGHT_NO);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+
 
         _passwordText = findViewById(R.id.input_password);
         _loginButton = findViewById(R.id.btn_login);

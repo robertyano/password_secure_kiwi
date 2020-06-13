@@ -10,11 +10,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.Loader;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.method.LinkMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,7 +29,9 @@ import android.widget.Toast;
 
 
 
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 
 import com.ray.android.passwordsecurekiwi.adapters.AccountCursorAdapter;
@@ -82,6 +86,13 @@ public class AccountActivity extends AppCompatActivity implements LoaderManager.
     private TextView numberOfResults;
     private TextView orderOfResults;
     private LinearLayout orderByToolbar;
+    private Menu menu;
+    private MenuItem uiModeMenuItem;
+    public SharedPreferences sharedPreferences;  // test
+    public boolean isDarkModeOn;  // test
+    public SharedPreferences.Editor editor; // test
+
+
 
 
     @Override
@@ -90,8 +101,14 @@ public class AccountActivity extends AppCompatActivity implements LoaderManager.
         mDbHelper = new AccountDbHelper(this);    // ADDED FOR TESTS
         setContentView(R.layout.account_main);
 
+
+
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
         boolean firstStart = prefs.getBoolean("firstStart", true);
+
+        // Added for the test to save preferences for UI mode
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        editor = sharedPreferences.edit();
 
         if (firstStart) {
             // showStartDialog();
@@ -372,6 +389,34 @@ public class AccountActivity extends AppCompatActivity implements LoaderManager.
         // Inflate the menu options from the res/menu/menu_catalog.xml file.
         // This adds menu items to the app bar.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
+        this.menu = menu;
+
+        // Figure out what ui mode user's in and set menu title for toggling ui correctly
+        uiModeMenuItem = menu.findItem(R.id.ui_mode);
+        switch (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) {
+            case Configuration.UI_MODE_NIGHT_YES:
+                uiModeMenuItem.setTitle(R.string.disable_dark_mode);
+
+                // This is what I added for the test to save ui mode preferences
+                editor.putBoolean(
+                        "isDarkModeOn", true);
+                editor.commit();
+
+
+
+                break;
+
+            case Configuration.UI_MODE_NIGHT_NO:
+                uiModeMenuItem.setTitle(R.string.enable_dark_mode);
+
+                // This is what I added for the test to save ui mode preferences
+                editor.putBoolean(
+                        "isDarkModeOn", false);
+                editor.commit();
+                break;
+
+        }
         return true;
     }
 
@@ -399,6 +444,32 @@ public class AccountActivity extends AppCompatActivity implements LoaderManager.
                 // Pop up confirmation dialog for update
                 updatePinCodeDialog();
                 return true;
+
+            // Respond to a click on the "Change UI Mode" menu option
+            case R.id.ui_mode:
+                // Figure out what ui mode user is in
+                uiModeMenuItem = menu.findItem(R.id.ui_mode);
+                // Figure out what ui mode user is in
+                // Then toggle ui mode between light and dark
+                switch (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) {
+                    case Configuration.UI_MODE_NIGHT_YES:
+                        AppCompatDelegate
+                                .setDefaultNightMode(
+                                        AppCompatDelegate
+                                                .MODE_NIGHT_NO);
+                        uiModeMenuItem.setTitle(R.string.enable_dark_mode);
+
+                        return true;
+                    case Configuration.UI_MODE_NIGHT_NO:
+                        AppCompatDelegate
+                                .setDefaultNightMode(
+                                        AppCompatDelegate
+                                                .MODE_NIGHT_YES);
+                        uiModeMenuItem.setTitle(R.string.disable_dark_mode);
+                        return true;
+                }
+
+
 
             // Responds to a click on the "Export Accounts" menu option
             case R.id.export_accounts:

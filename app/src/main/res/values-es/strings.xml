@@ -82,6 +82,8 @@
     <string name="btn_attach_file">Selecionar Archivo</string>
     <string name="toast_csv_import_sucessful">¡El archivo CSV ha importado las cuentas!</string>
     <string name="import_accounts_selected">" ha sido seleccionado!"</string>
+    <string name="disable_dark_mode">Deshabilitar modo oscuro</string>
+    <string name="enable_dark_mode">Habilitar modo oscuro</string>
 
 
 </resources>

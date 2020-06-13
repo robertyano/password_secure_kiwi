@@ -116,6 +116,8 @@
     <string name="view_source_code">View Source Code</string>
     <string name="export_accounts">Export Accounts</string>
     <string name="import_accounts">Import Accounts</string>
+    <string name="disable_dark_mode">Disable Dark Mode</string>
+    <string name="enable_dark_mode">Enable Dark Mode</string>
 
 
     <!-- Asterisk that indicates a required field -->
