@@ -16,6 +16,8 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.core.app.ShareCompat;
+import androidx.core.content.FileProvider;
 
 import com.ray.android.passwordsecurekiwi.adapters.CSVWriter;
 import com.ray.android.passwordsecurekiwi.data.AccountDbHelper;
@@ -119,7 +121,19 @@ public class ExportAccountActivity extends AppCompatActivity {
         File sharingGifFile = new File(exportDir, fileName);
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("application/csv");
-        Uri uri = Uri.fromFile(sharingGifFile);
+        Uri uri = FileProvider.getUriForFile(getApplicationContext(),"com.ray.android.passwordsecurekiwi.fileprovider" , sharingGifFile);
+
+        // code rec by Ian Lake
+      /*  Uri uriToFile = FileProvider.getUriForFile(getApplicationContext(), "com.ray.android.passwordsecurekiwi.fileprovider", sharingGifFile);
+        Intent shareIntent = ShareCompat.IntentBuilder.from(this)
+                .setStream(uriToFile)
+                .getIntent();
+        // Provide read access
+        shareIntent.setData(uriToFile);
+        shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);*/
+
+
+
         shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
         startActivity(Intent.createChooser(shareIntent, "Share CSV"));
     }
