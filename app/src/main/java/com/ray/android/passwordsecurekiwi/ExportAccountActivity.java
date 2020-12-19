@@ -2,6 +2,8 @@ package com.ray.android.passwordsecurekiwi;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -25,6 +27,7 @@ import com.ray.android.passwordsecurekiwi.data.AccountDbHelper;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Allows user to export a account to a new device
@@ -120,22 +123,18 @@ public class ExportAccountActivity extends AppCompatActivity {
         String fileName = "Password_Secure_Kiwi_data.csv";
         File sharingGifFile = new File(exportDir, fileName);
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
-        shareIntent.setType("application/csv");
+        shareIntent.setType("text/csv");
         Uri uri = FileProvider.getUriForFile(getApplicationContext(),"com.ray.android.passwordsecurekiwi.fileprovider" , sharingGifFile);
 
-        // code rec by Ian Lake
-      /*  Uri uriToFile = FileProvider.getUriForFile(getApplicationContext(), "com.ray.android.passwordsecurekiwi.fileprovider", sharingGifFile);
-        Intent shareIntent = ShareCompat.IntentBuilder.from(this)
-                .setStream(uriToFile)
-                .getIntent();
-        // Provide read access
-        shareIntent.setData(uriToFile);
-        shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);*/
 
-
+        List<ResolveInfo> resInfoList = getApplicationContext().getPackageManager().queryIntentActivities(shareIntent, PackageManager.MATCH_DEFAULT_ONLY);
+        for (ResolveInfo resolveInfo : resInfoList) {
+            String packageName = resolveInfo.activityInfo.packageName;
+            getApplicationContext().grantUriPermission(packageName, uri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        }
 
         shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
-        startActivity(Intent.createChooser(shareIntent, "Share CSV"));
+        startActivity(Intent.createChooser(shareIntent, "Share CSV").addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION));
     }
 
 
